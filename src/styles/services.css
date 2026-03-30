@@ -1,0 +1,217 @@
+/* ===== Services Page ===== */
+.services-page {
+  background: var(--navy);
+}
+
+.services-detail {
+  padding: 100px 0 60px;
+}
+
+.services-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.service-detail-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), rgba(200, 164, 92, 0.2));
+  border-radius: 0 4px 4px 0;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 164, 92, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-detail-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.service-detail-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(200, 164, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.service-detail-card__number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: rgba(200, 164, 92, 0.1);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.service-detail-card h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--white);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.service-detail-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.service-detail-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-detail-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.service-detail-card__check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(200, 164, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+/* ===== FAQ Accordion ===== */
+.faq-section {
+  background: var(--navy-light);
+  padding: 100px 0;
+}
+
+.faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq__item:hover {
+  border-color: rgba(200, 164, 92, 0.15);
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: left;
+  gap: 16px;
+}
+
+.faq__question:hover {
+  color: var(--gold);
+}
+
+.faq__toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(200, 164, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: var(--transition);
+}
+
+.faq__item--open .faq__toggle {
+  transform: rotate(45deg);
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq__item--open .faq__answer {
+  max-height: 300px;
+}
+
+.faq__answer-inner {
+  padding: 0 24px 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .services-detail__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-detail {
+    padding: 64px 0 40px;
+  }
+
+  .service-detail-card {
+    padding: 28px 24px;
+  }
+
+  .faq-section {
+    padding: 64px 0;
+  }
+}

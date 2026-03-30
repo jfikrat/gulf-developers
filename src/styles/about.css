@@ -1,0 +1,309 @@
+/* ===== About Page ===== */
+.about-story {
+  background: var(--navy);
+}
+
+.about-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-story__image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 50%, rgba(200, 164, 92, 0.1) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-story__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(200, 164, 92, 0.15);
+  border-radius: var(--radius-lg);
+}
+
+.about-story__image-inner {
+  position: absolute;
+  inset: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.about-story__image-year {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.3;
+  letter-spacing: 4px;
+}
+
+.about-story__image-text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.about-story__content h2 {
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.about-story__content .gold-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 24px;
+}
+
+.about-story__content p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.about-story__content p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ===== Vision / Mission / Values ===== */
+.vmv {
+  background: var(--navy-light);
+}
+
+.vmv__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.vmv__card {
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.vmv__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+}
+
+.vmv__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 164, 92, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.vmv__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(200, 164, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+
+.vmv__card h3 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.vmv__card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===== Why Choose Us ===== */
+.why-us {
+  background: var(--navy);
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.why-us__card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.why-us__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 164, 92, 0.15);
+}
+
+.why-us__number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: rgba(200, 164, 92, 0.15);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.why-us__card h3 {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.why-us__card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ===== Team ===== */
+.team-section {
+  background: var(--navy-light);
+}
+
+.team-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.team-section__content h2 {
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.team-section__content .gold-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 24px;
+}
+
+.team-section__content p {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.team-section__roles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.team-section__role {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+}
+
+.team-section__role-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(200, 164, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.team-section__role-info h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--white);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 2px;
+}
+
+.team-section__role-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.team-section__image {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, rgba(200, 164, 92, 0.08) 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-section__image-inner {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: rgba(200, 164, 92, 0.08);
+  letter-spacing: 4px;
+}
+
+@media (max-width: 1024px) {
+  .why-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-story__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .vmv__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-section__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .team-section__image {
+    order: -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-us__grid {
+    grid-template-columns: 1fr;
+  }
+}
