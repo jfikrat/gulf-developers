@@ -294,6 +294,19 @@ export const translations = {
   'contactPage.messagePlaceholder': { en: 'Tell us about your project requirements, equipment needs, or any questions you have...', ar: 'أخبرنا عن متطلبات مشروعك واحتياجاتك من المعدات أو أي أسئلة لديك...' },
   'contactPage.send': { en: 'Send Message', ar: 'إرسال الرسالة' },
 
+  // Testimonials
+  'testimonials.title': { en: 'What Our Clients Say', ar: 'ماذا يقول عملاؤنا' },
+  'testimonials.desc': { en: 'Trusted by leading companies across Iraq.', ar: 'موثوق من قبل الشركات الرائدة في العراق.' },
+  'testimonial.1.text': { en: 'Gulf Developers supplied and installed two Potain tower cranes for our residential project in Baghdad. Their team was professional, punctual, and the equipment quality was outstanding.', ar: 'قامت الخليج المطورة بتوريد وتركيب رافعتين برجيتين من بوتان لمشروعنا السكني في بغداد. كان فريقهم محترفاً ودقيقاً في المواعيد وجودة المعدات كانت ممتازة.' },
+  'testimonial.1.name': { en: 'Eng. Ahmed Al-Bayati', ar: 'م. أحمد البياتي' },
+  'testimonial.1.role': { en: 'Project Manager, Al-Hilal Construction Group', ar: 'مدير المشاريع، مجموعة الهلال للإنشاءات' },
+  'testimonial.2.text': { en: 'We have been working with Gulf Developers for generator supply and maintenance for over three years. Their after-sales service and response time is the best we have experienced in the region.', ar: 'نتعامل مع الخليج المطورة في توريد وصيانة المولدات منذ أكثر من ثلاث سنوات. خدمة ما بعد البيع وسرعة الاستجابة لديهم هي الأفضل في المنطقة.' },
+  'testimonial.2.name': { en: 'Hassan Al-Saadi', ar: 'حسن السعدي' },
+  'testimonial.2.role': { en: 'Operations Director, Basra Industrial Zone', ar: 'مدير العمليات، المنطقة الصناعية في البصرة' },
+  'testimonial.3.text': { en: 'The solar panel system Gulf Developers installed for our factory reduced our electricity costs by 40%. Excellent technical consultation and a smooth installation process from start to finish.', ar: 'نظام الطاقة الشمسية الذي ركبته الخليج المطورة لمصنعنا خفض تكاليف الكهرباء بنسبة 40%. استشارة فنية ممتازة وعملية تركيب سلسة من البداية إلى النهاية.' },
+  'testimonial.3.name': { en: 'Dr. Noor Al-Khafaji', ar: 'د. نور الخفاجي' },
+  'testimonial.3.role': { en: 'CEO, Kurdistan Green Energy Solutions', ar: 'الرئيس التنفيذي، حلول الطاقة الخضراء كردستان' },
+
   // Breadcrumb
   'breadcrumb.home': { en: 'Home', ar: 'الرئيسية' },
 }

@@ -3,6 +3,7 @@ import { LangProvider } from './context/LangContext.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import { Footer } from './components/Footer.jsx'
 import { ScrollToTop } from './components/ScrollToTop.jsx'
+import { WhatsApp } from './components/WhatsApp.jsx'
 import { Home } from './pages/Home.jsx'
 import { About } from './pages/About.jsx'
 import { Products } from './pages/Products.jsx'
@@ -25,6 +26,7 @@ export function App() {
         </Router>
       </main>
       <Footer />
+      <WhatsApp />
     </LangProvider>
   )
 }

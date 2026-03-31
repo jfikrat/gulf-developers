@@ -81,7 +81,7 @@ export function Home() {
   }, [])
 
   return (
-    <div>
+    <div class="page-transition">
       {/* Hero */}
       <section class="hero">
         <div class="hero__bg-image" />
@@ -234,6 +234,37 @@ export function Home() {
                   </span>
                 </div>
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-header fade-in">
+            <div class="gold-line" />
+            <h2>{t('testimonials.title')}</h2>
+            <p>{t('testimonials.desc')}</p>
+          </div>
+          <div class="testimonials__grid">
+            {[1, 2, 3].map((n) => (
+              <div class="testimonial-card fade-in" key={n} style={{ transitionDelay: `${(n - 1) * 0.15}s` }}>
+                <div class="testimonial-card__quote">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="1.5" opacity="0.4">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z" />
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 .5.25 1 1 1z" />
+                  </svg>
+                </div>
+                <p class="testimonial-card__text">{t(`testimonial.${n}.text`)}</p>
+                <div class="testimonial-card__author">
+                  <div class="testimonial-card__avatar">{t(`testimonial.${n}.name`).charAt(0)}</div>
+                  <div>
+                    <div class="testimonial-card__name">{t(`testimonial.${n}.name`)}</div>
+                    <div class="testimonial-card__role">{t(`testimonial.${n}.role`)}</div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

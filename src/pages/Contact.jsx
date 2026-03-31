@@ -29,7 +29,7 @@ export function Contact() {
   }, [])
 
   return (
-    <div class="contact-page">
+    <div class="contact-page page-transition">
       <Hero
         title={t('contactPage.heroTitle')}
         breadcrumb={t('contactPage.breadcrumb')}

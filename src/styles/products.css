@@ -232,6 +232,23 @@
   line-height: 1.7;
 }
 
+/* RTL Products */
+[dir="rtl"] .category-section__header {
+  text-align: right;
+}
+
+[dir="rtl"] .product-item {
+  text-align: right;
+}
+
+[dir="rtl"] .product-item__spec {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .why-gd {
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .product-category__grid {
     grid-template-columns: repeat(2, 1fr);

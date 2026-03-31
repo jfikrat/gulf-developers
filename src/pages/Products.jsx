@@ -192,7 +192,7 @@ export function Products() {
   }, [])
 
   return (
-    <div class="products-page">
+    <div class="products-page page-transition">
       <Hero
         title={t('productsPage.heroTitle')}
         breadcrumb={t('productsPage.breadcrumb')}

@@ -460,6 +460,27 @@
   line-height: 1.6;
 }
 
+/* RTL About */
+[dir="rtl"] .about-story__content {
+  text-align: right;
+}
+
+[dir="rtl"] .vmv-card {
+  text-align: center;
+}
+
+[dir="rtl"] .why-us__card {
+  text-align: right;
+}
+
+[dir="rtl"] .client-tag {
+  direction: rtl;
+}
+
+[dir="rtl"] .highlight-card {
+  text-align: right;
+}
+
 @media (max-width: 1024px) {
   .why-us__grid {
     grid-template-columns: repeat(2, 1fr);

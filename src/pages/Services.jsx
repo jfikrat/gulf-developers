@@ -86,7 +86,7 @@ export function Services() {
   }, [])
 
   return (
-    <div class="services-page">
+    <div class="services-page page-transition">
       <Hero
         title={t('servicesPage.heroTitle')}
         breadcrumb={t('servicesPage.breadcrumb')}

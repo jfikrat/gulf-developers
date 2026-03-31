@@ -239,6 +239,19 @@
   line-height: 1.7;
 }
 
+/* RTL Services */
+[dir="rtl"] .service-detail-card {
+  text-align: right;
+}
+
+[dir="rtl"] .service-detail-card__header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .service-coverage {
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .services-detail__grid {
     grid-template-columns: 1fr;

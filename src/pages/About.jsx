@@ -29,7 +29,7 @@ export function About() {
   }, [])
 
   return (
-    <div>
+    <div class="page-transition">
       <Hero
         title={t('about.heroTitle')}
         breadcrumb={t('about.breadcrumb')}
