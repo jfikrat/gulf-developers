@@ -146,11 +146,18 @@ p {
   margin-bottom: 16px;
 }
 
+/* ===== Gold Line Pulse ===== */
+@keyframes lineExpand {
+  0%, 100% { width: 50px; }
+  50% { width: 70px; }
+}
+
 .section-header .gold-line {
   width: 60px;
   height: 3px;
   background: var(--gold);
   margin: 0 auto 20px;
+  animation: lineExpand 3s ease-in-out infinite;
 }
 
 .section-header p {
@@ -402,4 +409,14 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold-dark);
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

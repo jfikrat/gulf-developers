@@ -98,6 +98,7 @@ const products = [
 
 export function Home() {
   const observerRef = useRef(null)
+  const statsRef = useRef(null)
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -115,13 +116,42 @@ export function Home() {
       observerRef.current.observe(el)
     })
 
-    return () => observerRef.current?.disconnect()
+    // Parallax scroll effect on stats items
+    const statsSection = statsRef.current
+    let rafId = null
+
+    function handleScroll() {
+      if (!statsSection) return
+      rafId = requestAnimationFrame(() => {
+        const rect = statsSection.getBoundingClientRect()
+        const viewH = window.innerHeight
+        // Only apply when section is in viewport
+        if (rect.bottom < 0 || rect.top > viewH) return
+        const progress = (viewH - rect.top) / (viewH + rect.height)
+        const items = statsSection.querySelectorAll('.stats__item')
+        items.forEach((item, i) => {
+          // Alternate direction for variety, subtle offset
+          const direction = i % 2 === 0 ? 1 : -1
+          const offset = direction * (1 - progress) * 12
+          item.style.transform = `translateY(${offset}px)`
+        })
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      observerRef.current?.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
     <div>
       {/* Hero */}
       <section class="hero">
+        <div class="hero__bg-image" />
         <div class="hero__bg">
           <div class="hero__pattern" />
           <div class="hero__glow" />
@@ -163,7 +193,7 @@ export function Home() {
       </section>
 
       {/* Stats */}
-      <section class="stats">
+      <section class="stats" ref={statsRef}>
         <div class="container">
           <div class="stats__grid">
             <div class="stats__item fade-in">
@@ -207,7 +237,16 @@ export function Home() {
           </div>
           <div class="services-preview__grid">
             {services.map((s, i) => (
-              <div class="service-card fade-in" style={{ transitionDelay: `${i * 0.1}s` }} key={i}>
+              <div
+                class="service-card fade-in"
+                style={{
+                  transitionDelay: `${i * 0.1}s`,
+                  '--breathe-dur': `${5 + Math.random() * 4}s`,
+                  '--breathe-delay': `${Math.random() * 3}s`,
+                  '--breathe-y': `${-(2 + Math.random() * 2)}px`,
+                }}
+                key={i}
+              >
                 <div class="service-card__icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
@@ -252,6 +291,7 @@ export function Home() {
 
       {/* CTA */}
       <section class="cta-section cta-section--bg">
+        <div class="cta__bg-image" />
         <div class="container">
           <div class="cta-section__inner fade-in">
             <h2>Ready to Build with Us?</h2>

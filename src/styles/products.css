@@ -52,6 +52,7 @@
   height: 3px;
   background: var(--gold);
   margin-bottom: 16px;
+  animation: lineExpand 3s ease-in-out infinite;
 }
 
 .product-category__header p {
