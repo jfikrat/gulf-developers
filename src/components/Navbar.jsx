@@ -47,7 +47,7 @@ export function Navbar() {
     <nav class={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div class="navbar__inner">
         <a href={`${BASE}/`} class="navbar__logo">
-          <div class="navbar__monogram">GD</div>
+          <img src={`${BASE}/images/logo.png`} alt="Gulf Developers" class="navbar__logo-img" />
           <div class="navbar__brand">
             <span class="navbar__brand-name">{t('nav.brandName')}</span>
             <span class="navbar__brand-sub">{t('nav.brandSub')}</span>

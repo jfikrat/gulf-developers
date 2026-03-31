@@ -15,7 +15,7 @@ export function Footer() {
             {/* Brand Column */}
             <div class="footer__brand">
               <div class="footer__brand-logo">
-                <div class="navbar__monogram">GD</div>
+                <img src={`${BASE}/images/logo.png`} alt="Gulf Developers" class="navbar__logo-img" />
                 <span>{t('nav.brandName')}</span>
               </div>
               <p class="arabic-name">{t('footer.arabicName')}</p>
