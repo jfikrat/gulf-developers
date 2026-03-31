@@ -288,8 +288,138 @@
   letter-spacing: 4px;
 }
 
+/* ===== Company Registration ===== */
+.company-reg {
+  background: var(--bg);
+}
+
+.company-reg__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.company-reg__item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.company-reg__item:hover {
+  border-color: var(--gold);
+}
+
+.company-reg__item strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.company-reg__item span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* ===== Our Clients ===== */
+.our-clients {
+  background: var(--bg-alt);
+}
+
+.our-clients__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.our-clients__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.our-clients__card:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ===== Projects Highlights ===== */
+.projects-highlights {
+  background: var(--bg);
+}
+
+.projects-highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.projects-highlights__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: var(--transition);
+}
+
+.projects-highlights__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(160, 125, 79, 0.1);
+}
+
+.projects-highlights__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(160, 125, 79, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.projects-highlights__card h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+.projects-highlights__card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 @media (max-width: 1024px) {
   .why-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-reg__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .our-clients__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-highlights__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -317,6 +447,18 @@
 
 @media (max-width: 640px) {
   .why-us__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-reg__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .our-clients__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-highlights__grid {
     grid-template-columns: 1fr;
   }
 }

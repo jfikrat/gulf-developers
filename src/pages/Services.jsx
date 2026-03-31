@@ -120,23 +120,23 @@ const services = [
 const faqs = [
   {
     q: 'What areas do you serve?',
-    a: 'Gulf Developers operates primarily across Iraq, including Baghdad, Erbil, Basra, and Sulaymaniyah. We also serve clients in neighboring countries including Kurdistan Region, and have completed projects across 4 countries in the Middle East.',
+    a: 'Gulf Developers operates across all major Iraqi cities including Baghdad, Basra, Erbil, Sulaymaniyah, Najaf, and Karbala. Our Baghdad headquarters coordinates logistics nationwide, with regional teams in the Kurdistan Region. We have completed over 200 projects across Iraq and 4 countries in the Middle East.',
   },
   {
     q: 'Do you provide after-sales support and warranty?',
-    a: 'Yes, all equipment we supply comes with full manufacturer warranty. We also offer comprehensive after-sales support including scheduled maintenance, emergency repairs, spare parts supply, and technical assistance for the lifetime of your equipment.',
+    a: 'Yes, all equipment — including Potain tower cranes, Cummins generators, and LONGI solar panels — comes with full manufacturer warranty. Our Baghdad-based service team provides scheduled maintenance, 24/7 emergency repairs, genuine spare parts, and on-site technical assistance throughout the equipment lifecycle.',
   },
   {
     q: 'Can you customize equipment specifications for our project?',
-    a: 'Absolutely. Our technical team works closely with clients to understand specific project requirements. We can source equipment with custom configurations, including modified lifting capacities, height specifications, and specialized attachments.',
+    a: 'Absolutely. Our engineering team has configured tower cranes for high-rise projects in Baghdad, heavy-lift solutions for oil & gas sites in Basra, and hybrid solar-diesel systems for remote construction camps in Kurdistan. We work directly with manufacturers like Zoomlion, Liebherr, and Baudouin to meet exact specifications.',
   },
   {
     q: 'What are your payment terms?',
-    a: 'We offer flexible payment options tailored to each project. Standard terms include advance payment, letter of credit, and installment plans for qualified clients. Contact our sales team to discuss the best arrangement for your needs.',
+    a: 'We offer flexible payment options tailored to each project. Standard terms include advance payment, irrevocable letter of credit (L/C), and installment plans for qualified Iraqi and regional clients. For government and institutional projects, we accept official purchase orders with agreed payment schedules.',
   },
   {
     q: 'How long does delivery and installation take?',
-    a: 'Delivery timelines vary by equipment type and availability. Standard equipment is typically delivered within 4-8 weeks. Installation for tower cranes typically takes 3-5 days, while generators and solar systems can be commissioned within 1-2 days.',
+    a: 'For equipment in our Iraq warehouse, delivery takes 3-7 days. Internationally sourced equipment (tower cranes, large generators) typically arrives within 4-8 weeks via Umm Qasr Port. Tower crane erection takes 3-5 days on-site, generators are commissioned within 1-2 days, and solar system installations depend on capacity (typically 1-3 weeks for commercial scale).',
   },
 ]
 
@@ -233,6 +233,16 @@ export function Services() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Coverage */}
+      <section class="service-coverage">
+        <div class="container">
+          <div class="service-coverage__inner fade-in">
+            <h3>Service Coverage</h3>
+            <p>We serve all major Iraqi cities: Baghdad, Basra, Erbil, Sulaymaniyah, Najaf, and Karbala.</p>
           </div>
         </div>
       </section>

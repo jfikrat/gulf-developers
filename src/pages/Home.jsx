@@ -224,12 +224,28 @@ export function Home() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section class="trust-bar">
+        <div class="container">
+          <p class="trust-bar__label">AUTHORIZED DEALER & PARTNER</p>
+          <div class="trust-bar__logos">
+            <span class="trust-badge">POTAIN</span>
+            <span class="trust-badge">ZOOMLION</span>
+            <span class="trust-badge">CUMMINS</span>
+            <span class="trust-badge">LONGI SOLAR</span>
+            <span class="trust-badge">BAUDOUIN</span>
+            <span class="trust-badge">LIEBHERR</span>
+          </div>
+        </div>
+      </section>
+
       {/* Services Preview */}
       <section class="section services-preview">
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
             <h2>What We Do</h2>
+            <p class="arabic-sub">ما نقدمه من خدمات</p>
             <p>
               Comprehensive construction and energy solutions tailored to the demands of
               modern infrastructure development.
@@ -262,6 +278,7 @@ export function Home() {
           <div class="section-header fade-in">
             <div class="gold-line" />
             <h2>Our Products</h2>
+            <p class="arabic-sub">منتجاتنا</p>
             <p>
               World-class construction equipment and energy systems from leading global manufacturers.
             </p>
@@ -295,6 +312,7 @@ export function Home() {
         <div class="container">
           <div class="cta-section__inner fade-in">
             <h2>Ready to Build with Us?</h2>
+            <p class="arabic-sub dark-section__arabic">هل أنت مستعد للبناء معنا؟</p>
             <p>
               Let us power your next project with the right equipment and expertise.
               Get in touch for a consultation today.

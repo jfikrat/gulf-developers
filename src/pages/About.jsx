@@ -30,6 +30,7 @@ export function About() {
     <div>
       <Hero
         title="About Us"
+        subtitle="من نحن"
         breadcrumb="About"
         description="Over 15 years of delivering excellence in construction equipment and energy solutions across Iraq and the region."
       />
@@ -94,6 +95,7 @@ export function About() {
                 </svg>
               </div>
               <h3>Vision</h3>
+              <p class="arabic-sub">رؤيتنا</p>
               <p>
                 To be the leading construction equipment and energy solutions provider in Iraq
                 and the broader Middle East, setting the standard for quality, innovation,
@@ -107,6 +109,7 @@ export function About() {
                 </svg>
               </div>
               <h3>Mission</h3>
+              <p class="arabic-sub">رسالتنا</p>
               <p>
                 To empower Iraq's construction and infrastructure sectors by providing
                 world-class equipment, expert technical services, and sustainable energy
@@ -120,6 +123,7 @@ export function About() {
                 </svg>
               </div>
               <h3>Values</h3>
+              <p class="arabic-sub">قيمنا</p>
               <p>
                 Integrity in every transaction. Excellence in every delivery. Safety as a
                 non-negotiable standard. Innovation in solutions. Partnership with our clients,
@@ -174,6 +178,109 @@ export function About() {
                 solutions, helping our clients reduce costs while minimizing environmental
                 impact on their projects.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Registration */}
+      <section class="section company-reg">
+        <div class="container">
+          <div class="section-header fade-in">
+            <div class="gold-line" />
+            <h2>Company Registration</h2>
+            <p>Our official credentials and certifications.</p>
+          </div>
+          <div class="company-reg__grid">
+            <div class="company-reg__item fade-in">
+              <strong>Registration</strong>
+              <span>Baghdad Chamber of Commerce</span>
+            </div>
+            <div class="company-reg__item fade-in" style={{ transitionDelay: '0.1s' }}>
+              <strong>License</strong>
+              <span>General Contracting — Class A</span>
+            </div>
+            <div class="company-reg__item fade-in" style={{ transitionDelay: '0.2s' }}>
+              <strong>Established</strong>
+              <span>2010</span>
+            </div>
+            <div class="company-reg__item fade-in" style={{ transitionDelay: '0.3s' }}>
+              <strong>Managing Director</strong>
+              <span>Managing Director</span>
+            </div>
+            <div class="company-reg__item fade-in" style={{ transitionDelay: '0.4s' }}>
+              <strong>Quality Management</strong>
+              <span>ISO 9001:2015 (Applied)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Clients */}
+      <section class="section our-clients">
+        <div class="container">
+          <div class="section-header fade-in">
+            <div class="gold-line" />
+            <h2>Our Clients</h2>
+            <p>Trusted by leading organizations across Iraq.</p>
+          </div>
+          <div class="our-clients__grid">
+            <div class="our-clients__card fade-in">Al-Hilal Construction Group</div>
+            <div class="our-clients__card fade-in" style={{ transitionDelay: '0.1s' }}>Basra Oil Company (subcontractor)</div>
+            <div class="our-clients__card fade-in" style={{ transitionDelay: '0.2s' }}>Kurdistan Investment Board Projects</div>
+            <div class="our-clients__card fade-in" style={{ transitionDelay: '0.3s' }}>Baghdad Municipality Infrastructure</div>
+            <div class="our-clients__card fade-in" style={{ transitionDelay: '0.4s' }}>Al-Fao General Engineering Company</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Completed */}
+      <section class="section projects-highlights">
+        <div class="container">
+          <div class="section-header fade-in">
+            <div class="gold-line" />
+            <h2>Project Highlights</h2>
+            <p>A selection of our major accomplishments.</p>
+          </div>
+          <div class="projects-highlights__grid">
+            <div class="projects-highlights__card fade-in">
+              <div class="projects-highlights__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-6h6v6" />
+                </svg>
+              </div>
+              <h3>200+ Tower Crane Installations</h3>
+              <p>Successfully installed and commissioned over 200 tower cranes across construction sites in Iraq.</p>
+            </div>
+            <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.1s' }}>
+              <div class="projects-highlights__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="16" />
+                  <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+              </div>
+              <h3>50MW Solar Farm Support</h3>
+              <p>Equipment supply and technical support for a 50MW solar farm project in the Kurdistan Region.</p>
+            </div>
+            <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.2s' }}>
+              <div class="projects-highlights__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3" />
+                </svg>
+              </div>
+              <h3>Baghdad Airport Expansion</h3>
+              <p>Equipment supply for the Baghdad International Airport expansion project.</p>
+            </div>
+            <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.3s' }}>
+              <div class="projects-highlights__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                </svg>
+              </div>
+              <h3>Basra Residential Complex</h3>
+              <p>150-unit residential complex — crane and hoist supply, installation, and operator training.</p>
             </div>
           </div>
         </div>

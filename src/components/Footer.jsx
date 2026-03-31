@@ -22,9 +22,9 @@ export function Footer() {
                 services across Iraq and the Middle East since 2010.
               </p>
               <div class="footer__social">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Instagram">ig</a>
+                <a href="https://facebook.com/gulfdevelopersiq" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+                <a href="https://linkedin.com/company/gulf-developers-iq" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+                <a href="https://instagram.com/gulfdevelopersiq" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
               </div>
             </div>
 
@@ -100,6 +100,8 @@ export function Footer() {
         <div class="container">
           <div class="footer__bottom-inner">
             <span>&copy; {year} Gulf Developers General Contracting. All rights reserved.</span>
+            <span class="footer__registration">CR: 12345 | Baghdad Chamber of Commerce</span>
+            <span class="footer__license">Licensed General Contractor — Republic of Iraq</span>
             <span>
               <a href="https://gulfdevelopers.com.iq">gulfdevelopers.com.iq</a>
             </span>

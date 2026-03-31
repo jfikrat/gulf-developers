@@ -254,6 +254,16 @@ export function Products() {
         </section>
       ))}
 
+      {/* Why Gulf Developers */}
+      <section class="why-gd">
+        <div class="container">
+          <div class="why-gd__inner fade-in">
+            <h3>Why Gulf Developers?</h3>
+            <p>Direct brand authorization means genuine parts, factory warranty, and certified after-sales support across Iraq.</p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section class="cta-section">
         <div class="container">

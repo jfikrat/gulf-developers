@@ -42,7 +42,7 @@ export function Navbar() {
   }
 
   return (
-    <nav class={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <nav class={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div class="navbar__inner">
         <a href={`${BASE}/`} class="navbar__logo">
           <div class="navbar__monogram">GD</div>
@@ -58,6 +58,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               class={`navbar__link ${isActive(link.href) ? 'navbar__link--active' : ''}`}
+              {...(isActive(link.href) ? { 'aria-current': 'page' } : {})}
             >
               {link.label}
             </a>
@@ -71,6 +72,7 @@ export function Navbar() {
           class={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span />
           <span />
@@ -84,6 +86,7 @@ export function Navbar() {
             key={link.href}
             href={link.href}
             class={`navbar__link ${isActive(link.href) ? 'navbar__link--active' : ''}`}
+            {...(isActive(link.href) ? { 'aria-current': 'page' } : {})}
           >
             {link.label}
           </a>

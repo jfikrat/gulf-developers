@@ -28,6 +28,7 @@ export function Contact() {
     <div class="contact-page">
       <Hero
         title="Contact Us"
+        subtitle="تواصل معنا"
         breadcrumb="Contact"
         description="Get in touch with our team for quotations, technical support, or general inquiries."
       />
@@ -47,6 +48,7 @@ export function Contact() {
                 <div class="contact-info__text">
                   <h3>Our Office</h3>
                   <p>Baghdad, Al-Dawoody<br />Iraq</p>
+                  <p class="arabic-sub" style={{ marginTop: '4px' }}>بغداد، الداودي، العراق</p>
                 </div>
               </div>
 
@@ -93,7 +95,7 @@ export function Contact() {
             <div class="contact-form fade-in-right">
               <h2>Send Us a Message</h2>
               <div class="gold-line" />
-              <form action="https://formspree.io/f/info@gulfdevelopersiq.com" method="POST">
+              <form action="https://formspree.io/f/xgegkpwl" method="POST">
                 <div class="contact-form__grid">
                   <div class="contact-form__group">
                     <label class="contact-form__label" for="name">Full Name *</label>

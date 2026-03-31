@@ -170,6 +170,13 @@
   color: var(--gold-light);
 }
 
+.footer__registration,
+.footer__license {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+}
+
 @media (max-width: 900px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;

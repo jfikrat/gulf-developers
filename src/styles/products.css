@@ -192,6 +192,35 @@
   color: var(--white);
 }
 
+/* ===== Why Gulf Developers Callout ===== */
+.why-gd {
+  background: var(--bg-alt);
+  padding: 48px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.why-gd__inner {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.why-gd__inner h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.why-gd__inner p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
 @media (max-width: 1024px) {
   .product-category__grid {
     grid-template-columns: repeat(2, 1fr);
