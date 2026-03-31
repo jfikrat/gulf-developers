@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { Hero } from '../components/Hero.jsx'
+import { Lightbox } from '../components/Lightbox.jsx'
 import { useLang } from '../context/LangContext.jsx'
 import '../styles/products.css'
 
@@ -171,6 +172,7 @@ const categories = [
 export function Products() {
   const observerRef = useRef(null)
   const { t } = useLang()
+  const [lightboxItem, setLightboxItem] = useState(null)
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -221,7 +223,15 @@ export function Products() {
             <div class="product-category__grid">
               {cat.products.map((product, i) => (
                 <div class="product-item fade-in" style={{ transitionDelay: `${i * 0.1}s` }} key={i}>
-                  <div class="product-item__image">
+                  <div
+                    class="product-item__image"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setLightboxItem({
+                      image: product.image,
+                      name: product.name,
+                      specs: product.specs.map(s => ({ label: t(s.labelKey), value: s.value })),
+                    })}
+                  >
                     <img src={product.image} alt={product.name} loading="lazy" />
                     {product.badge && (
                       <span class="product-item__badge">{product.badge}</span>
@@ -276,6 +286,15 @@ export function Products() {
           </div>
         </div>
       </section>
+
+      {lightboxItem && (
+        <Lightbox
+          image={lightboxItem.image}
+          title={lightboxItem.name}
+          specs={lightboxItem.specs}
+          onClose={() => setLightboxItem(null)}
+        />
+      )}
     </div>
   )
 }

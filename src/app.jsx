@@ -1,9 +1,11 @@
 import Router from 'preact-router'
 import { LangProvider } from './context/LangContext.jsx'
+import { Preloader } from './components/Preloader.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import { Footer } from './components/Footer.jsx'
 import { ScrollToTop } from './components/ScrollToTop.jsx'
 import { WhatsApp } from './components/WhatsApp.jsx'
+import { BackToTop } from './components/BackToTop.jsx'
 import { Home } from './pages/Home.jsx'
 import { About } from './pages/About.jsx'
 import { Products } from './pages/Products.jsx'
@@ -13,6 +15,7 @@ import { Contact } from './pages/Contact.jsx'
 export function App() {
   return (
     <LangProvider>
+      <Preloader />
       <Navbar />
       <ScrollToTop />
       <main>
@@ -27,6 +30,7 @@ export function App() {
       </main>
       <Footer />
       <WhatsApp />
+      <BackToTop />
     </LangProvider>
   )
 }
