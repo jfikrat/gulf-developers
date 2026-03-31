@@ -1,6 +1,6 @@
 /* ===== Contact Page ===== */
 .contact-page {
-  background: var(--navy);
+  background: var(--bg);
 }
 
 .contact-page .page-hero {
@@ -9,8 +9,8 @@
 
 .contact-page .page-hero::before {
   background:
-    linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(20, 36, 69, 0.82) 100%),
-    radial-gradient(circle at 20% 50%, rgba(200, 164, 92, 0.05) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(26, 20, 16, 0.88) 0%, rgba(42, 36, 32, 0.82) 100%),
+    radial-gradient(circle at 20% 50%, rgba(160, 125, 79, 0.05) 0%, transparent 50%);
 }
 
 .contact-main {
@@ -31,8 +31,8 @@
 }
 
 .contact-info__card {
-  background: var(--navy-light);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .contact-info__card:hover {
-  border-color: rgba(200, 164, 92, 0.15);
+  border-color: var(--gold);
   transform: translateX(4px);
 }
 
@@ -50,7 +50,7 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(200, 164, 92, 0.1);
+  background: rgba(160, 125, 79, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,7 @@
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--white);
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 6px;
@@ -85,14 +85,14 @@
 
 /* Contact Form */
 .contact-form {
-  background: var(--navy-light);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 48px;
 }
 
 .contact-form h2 {
-  color: var(--white);
+  color: var(--text);
   font-size: 1.8rem;
   margin-bottom: 8px;
 }
@@ -132,10 +132,10 @@
 .contact-form__textarea {
   width: 100%;
   padding: 14px 16px;
-  background: var(--navy);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  color: var(--white);
+  color: var(--text);
   font-size: 0.95rem;
   transition: var(--transition);
   outline: none;
@@ -143,13 +143,13 @@
 
 .contact-form__input::placeholder,
 .contact-form__textarea::placeholder {
-  color: var(--gray-500);
+  color: var(--text-muted);
 }
 
 .contact-form__input:focus,
 .contact-form__textarea:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(200, 164, 92, 0.1);
+  box-shadow: 0 0 0 3px rgba(160, 125, 79, 0.1);
 }
 
 .contact-form__textarea {
@@ -176,7 +176,7 @@
 .contact-map__wrapper {
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
   height: 400px;
 }
 
@@ -184,7 +184,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(0.6) contrast(1.1) brightness(0.7);
+  filter: grayscale(0.3) contrast(1.05) brightness(1);
 }
 
 @media (max-width: 900px) {

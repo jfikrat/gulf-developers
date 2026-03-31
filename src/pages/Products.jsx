@@ -14,7 +14,7 @@ const categories = [
       {
         name: 'Potain MCT 85 F5',
         badge: 'France',
-        gradient: 'linear-gradient(135deg, #0d1b2f 0%, #162c4a 60%, rgba(200, 164, 92, 0.12) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
           { label: 'Max Capacity', value: '5 Tonnes' },
           { label: 'Jib Length', value: '52 m' },
@@ -25,7 +25,7 @@ const categories = [
       {
         name: 'Zoomlion TCL5522-12',
         badge: 'China',
-        gradient: 'linear-gradient(135deg, #0a1628 0%, #1a2a4a 60%, rgba(200, 164, 92, 0.1) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
           { label: 'Max Capacity', value: '12 Tonnes' },
           { label: 'Jib Length', value: '55 m' },
@@ -36,7 +36,7 @@ const categories = [
       {
         name: 'Liebherr 85 EC-B 5',
         badge: 'Germany',
-        gradient: 'linear-gradient(135deg, #0f1f3a 0%, #142445 60%, rgba(200, 164, 92, 0.15) 100%)',
+        gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
         specs: [
           { label: 'Max Capacity', value: '5 Tonnes' },
           { label: 'Type', value: 'Flat-Top' },
@@ -55,7 +55,7 @@ const categories = [
       {
         name: 'GD Scando 650',
         badge: 'Bestseller',
-        gradient: 'linear-gradient(135deg, #142445 0%, #1a2a4a 60%, rgba(200, 164, 92, 0.12) 100%)',
+        gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
           { label: 'Capacity', value: '2,000 kg' },
           { label: 'Max Height', value: '96 m' },
@@ -66,7 +66,7 @@ const categories = [
       {
         name: 'GD Mammoth',
         badge: 'Heavy Duty',
-        gradient: 'linear-gradient(135deg, #0d1b2f 0%, #162c4a 60%, rgba(200, 164, 92, 0.1) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
           { label: 'Capacity', value: '3,200 kg' },
           { label: 'Max Height', value: '150 m' },
@@ -77,7 +77,7 @@ const categories = [
       {
         name: 'GD SC Range',
         badge: 'Compact',
-        gradient: 'linear-gradient(135deg, #0a1628 0%, #1a2a4a 60%, rgba(200, 164, 92, 0.08) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.08) 100%)',
         specs: [
           { label: 'Capacity', value: '1,500 kg' },
           { label: 'Max Height', value: '60 m' },
@@ -96,7 +96,7 @@ const categories = [
       {
         name: 'Cummins 500kVA Diesel Generator',
         badge: 'Premium',
-        gradient: 'linear-gradient(135deg, #0f1f3a 0%, #1a2a4a 60%, rgba(200, 164, 92, 0.12) 100%)',
+        gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
           { label: 'Power', value: '500 kVA' },
           { label: 'Engine', value: 'Cummins QSZ13' },
@@ -107,7 +107,7 @@ const categories = [
       {
         name: 'Baudouin 350kVA Diesel Generator',
         badge: 'Efficient',
-        gradient: 'linear-gradient(135deg, #142445 0%, #0d1b2f 60%, rgba(200, 164, 92, 0.1) 100%)',
+        gradient: 'linear-gradient(135deg, #2a2420 0%, #1a1410 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
           { label: 'Power', value: '350 kVA' },
           { label: 'Engine', value: 'Baudouin 6M16' },
@@ -118,7 +118,7 @@ const categories = [
       {
         name: 'Green Power 1500rpm Silent',
         badge: 'Silent',
-        gradient: 'linear-gradient(135deg, #0a1628 0%, #162c4a 60%, rgba(200, 164, 92, 0.15) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
         specs: [
           { label: 'Speed', value: '1500 RPM' },
           { label: 'Noise', value: '<75 dB(A)' },
@@ -137,7 +137,7 @@ const categories = [
       {
         name: 'LONGI Hi-MO 6 600W Panel',
         badge: 'Latest',
-        gradient: 'linear-gradient(135deg, #0d1b2f 0%, #0a1628 60%, rgba(200, 164, 92, 0.12) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #1a1410 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
           { label: 'Power', value: '600 W' },
           { label: 'Efficiency', value: '22.8%' },
@@ -148,7 +148,7 @@ const categories = [
       {
         name: 'LONGI Hi-MO 5M 550W Panel',
         badge: 'Popular',
-        gradient: 'linear-gradient(135deg, #142445 0%, #1a2a4a 60%, rgba(200, 164, 92, 0.1) 100%)',
+        gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
           { label: 'Power', value: '550 W' },
           { label: 'Efficiency', value: '21.3%' },
@@ -159,7 +159,7 @@ const categories = [
       {
         name: '12V 600AH Battery Storage',
         badge: 'Storage',
-        gradient: 'linear-gradient(135deg, #0a1628 0%, #0f1f3a 60%, rgba(200, 164, 92, 0.08) 100%)',
+        gradient: 'linear-gradient(135deg, #1a1410 0%, #211c18 60%, rgba(160, 125, 79, 0.08) 100%)',
         specs: [
           { label: 'Voltage', value: '12V' },
           { label: 'Capacity', value: '600 AH' },

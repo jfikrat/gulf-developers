@@ -6,14 +6,17 @@
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: var(--transition);
 }
 
 .navbar--scrolled {
-  background: rgba(10, 22, 40, 0.95);
+  background: rgba(250, 248, 245, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 20px rgba(26, 20, 16, 0.08);
 }
 
 .navbar__inner {
@@ -39,13 +42,14 @@
   width: 48px;
   height: 48px;
   background: var(--gold);
+  border: 2px solid var(--gold-dark);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: var(--navy);
+  color: var(--white);
   letter-spacing: 1px;
 }
 
@@ -58,7 +62,7 @@
 .navbar__brand-name {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  color: var(--white);
+  color: var(--text);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -87,6 +91,12 @@
   letter-spacing: 1px;
   transition: var(--transition-fast);
   padding: 4px 0;
+}
+
+/* Desktop nav links hover text color override */
+.navbar__links .navbar__link:hover,
+.navbar__links .navbar__link--active {
+  color: var(--gold);
 }
 
 .navbar__link::after {
@@ -128,7 +138,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: var(--text);
   transition: var(--transition);
   border-radius: 2px;
 }
@@ -153,7 +163,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 22, 40, 0.98);
+  background: rgba(250, 248, 245, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   flex-direction: column;

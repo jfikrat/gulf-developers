@@ -1,6 +1,6 @@
 /* ===== About Page ===== */
 .about-story {
-  background: var(--navy);
+  background: var(--bg);
 }
 
 .about-story__grid {
@@ -29,9 +29,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(200, 164, 92, 0.15);
+  border: 1px solid rgba(160, 125, 79, 0.15);
   border-radius: var(--radius-lg);
-  background: linear-gradient(to top, rgba(10, 22, 40, 0.7) 0%, rgba(10, 22, 40, 0.1) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(26, 20, 16, 0.7) 0%, rgba(26, 20, 16, 0.1) 50%, transparent 100%);
   z-index: 1;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .about-story__content h2 {
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 8px;
 }
 
@@ -87,7 +87,7 @@
 
 /* ===== Vision / Mission / Values ===== */
 .vmv {
-  background: var(--navy-light);
+  background: var(--bg-alt);
 }
 
 .vmv__grid {
@@ -97,8 +97,8 @@
 }
 
 .vmv__card {
-  background: var(--navy);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 40px 32px;
   text-align: center;
@@ -120,15 +120,15 @@
 
 .vmv__card:hover {
   transform: translateY(-4px);
-  border-color: rgba(200, 164, 92, 0.15);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(160, 125, 79, 0.1);
 }
 
 .vmv__icon {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(200, 164, 92, 0.1);
+  background: rgba(160, 125, 79, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +151,7 @@
 
 /* ===== Why Choose Us ===== */
 .why-us {
-  background: var(--navy);
+  background: var(--bg);
 }
 
 .why-us__grid {
@@ -161,8 +161,8 @@
 }
 
 .why-us__card {
-  background: var(--navy-light);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 36px 28px;
   text-align: center;
@@ -171,19 +171,19 @@
 
 .why-us__card:hover {
   transform: translateY(-4px);
-  border-color: rgba(200, 164, 92, 0.15);
+  border-color: var(--gold);
 }
 
 .why-us__number {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: rgba(200, 164, 92, 0.15);
+  color: rgba(160, 125, 79, 0.2);
   margin-bottom: 16px;
   letter-spacing: 2px;
 }
 
 .why-us__card h3 {
-  color: var(--white);
+  color: var(--text);
   font-size: 1.2rem;
   margin-bottom: 12px;
   letter-spacing: 1px;
@@ -197,7 +197,7 @@
 
 /* ===== Team ===== */
 .team-section {
-  background: var(--navy-light);
+  background: var(--bg-alt);
 }
 
 .team-section__inner {
@@ -208,7 +208,7 @@
 }
 
 .team-section__content h2 {
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 8px;
 }
 
@@ -236,8 +236,8 @@
   align-items: center;
   gap: 16px;
   padding: 16px 20px;
-  background: var(--navy);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
 }
 
@@ -245,7 +245,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(200, 164, 92, 0.1);
+  background: rgba(160, 125, 79, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,7 +257,7 @@
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--white);
+  color: var(--text);
   text-transform: none;
   letter-spacing: 0;
   margin-bottom: 2px;
@@ -272,7 +272,8 @@
 .team-section__image {
   aspect-ratio: 1;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, rgba(200, 164, 92, 0.08) 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-alt) 50%, rgba(160, 125, 79, 0.08) 100%);
+  border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -283,7 +284,7 @@
 .team-section__image-inner {
   font-family: var(--font-heading);
   font-size: 6rem;
-  color: rgba(200, 164, 92, 0.08);
+  color: rgba(160, 125, 79, 0.1);
   letter-spacing: 4px;
 }
 
