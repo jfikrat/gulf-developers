@@ -187,6 +187,69 @@
   filter: grayscale(0.3) contrast(1.05) brightness(1);
 }
 
+/* RTL Contact Layout */
+[dir="rtl"] .contact-main__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .contact-info__card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .contact-info__card:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .contact-info__text h3 {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+[dir="rtl"] .contact-info__text p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .contact-form h2 {
+  text-align: right;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+[dir="rtl"] .contact-form .gold-line {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .contact-form__label {
+  text-align: right;
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 600;
+}
+
+[dir="rtl"] .contact-form__input,
+[dir="rtl"] .contact-form__textarea {
+  text-align: right;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+[dir="rtl"] .contact-form__input::placeholder,
+[dir="rtl"] .contact-form__textarea::placeholder {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-form__submit .btn {
+  flex-direction: row-reverse;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
 @media (max-width: 900px) {
   .contact-main__grid {
     grid-template-columns: 1fr;

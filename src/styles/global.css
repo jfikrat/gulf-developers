@@ -492,8 +492,7 @@ p {
   font-size: 0.95rem;
 }
 
-/* Phone/numbers stay LTR in RTL context */
-[dir="rtl"] .contact-info__card p,
+/* Phone/numbers/email stay LTR in RTL context */
 [dir="rtl"] .footer__contact-item span {
   direction: ltr;
   unicode-bidi: embed;
@@ -584,11 +583,7 @@ p {
   text-align: right;
 }
 
-/* Contact info card */
-[dir="rtl"] .contact-info__card {
-  flex-direction: row-reverse;
-  text-align: right;
-}
+/* Contact info card — handled in contact.css */
 
 /* Footer contact items */
 [dir="rtl"] .footer__contact-item {
