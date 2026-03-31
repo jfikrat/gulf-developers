@@ -425,6 +425,139 @@ p {
   background: var(--gold-dark);
 }
 
+/* ===== RTL Support ===== */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .container {
+  direction: rtl;
+}
+
+/* Flip flexbox directions for RTL */
+[dir="rtl"] .hero__actions,
+[dir="rtl"] .cta-section__actions,
+[dir="rtl"] .stats__grid,
+[dir="rtl"] .trust-bar__logos {
+  flex-direction: row-reverse;
+}
+
+/* Flip margins/paddings that are direction-specific */
+[dir="rtl"] .service-card__icon,
+[dir="rtl"] .cert-badge__icon {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Arabic font */
+[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', 'Inter', 'Segoe UI', sans-serif;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+  font-family: 'Noto Sans Arabic', 'Bebas Neue', sans-serif;
+  letter-spacing: 0;
+}
+
+/* Arrow icons flip */
+[dir="rtl"] .product-card__arrow svg,
+[dir="rtl"] .btn svg,
+[dir="rtl"] .product-item__cta svg {
+  transform: scaleX(-1);
+}
+
+/* Breadcrumb RTL */
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* About story grid flip */
+[dir="rtl"] .about-story__grid {
+  direction: rtl;
+}
+
+/* Gold line stays centered */
+[dir="rtl"] .gold-line {
+  margin-right: 0;
+}
+
+[dir="rtl"] .about-story__content .gold-line {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Service detail card features */
+[dir="rtl"] .service-detail-card__feature {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .service-detail-card__check {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Contact form alignment */
+[dir="rtl"] .contact-form__input,
+[dir="rtl"] .contact-form__textarea {
+  text-align: right;
+}
+
+/* Contact info card */
+[dir="rtl"] .contact-info__card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Footer contact items */
+[dir="rtl"] .footer__contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Team section role */
+[dir="rtl"] .team-section__role {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* FAQ */
+[dir="rtl"] .faq__question {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Product item specs */
+[dir="rtl"] .product-item__spec {
+  text-align: right;
+}
+
+[dir="rtl"] .product-item__cta {
+  flex-direction: row-reverse;
+}
+
+/* Navbar CTA margin flip */
+[dir="rtl"] .navbar__cta {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* Section header centered text stays centered in RTL */
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+/* Why us number */
+[dir="rtl"] .why-us__number {
+  text-align: right;
+}
+
+/* Footer grid RTL */
+[dir="rtl"] .footer__grid {
+  direction: rtl;
+}
+
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

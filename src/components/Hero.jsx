@@ -1,16 +1,19 @@
-export function Hero({ title, subtitle, breadcrumb, description }) {
+import { useLang } from '../context/LangContext.jsx'
+
+export function Hero({ title, description, breadcrumb }) {
+  const { t } = useLang()
+
   return (
     <section class="page-hero">
       <div class="container">
         {breadcrumb && (
           <nav class="breadcrumb">
-            <a href="/gulf-developers/">Home</a>
+            <a href="/gulf-developers/">{t('breadcrumb.home')}</a>
             <span class="separator">/</span>
             <span>{breadcrumb}</span>
           </nav>
         )}
         <h1>{title}</h1>
-        {subtitle && <p class="arabic-sub" style={{ color: 'rgba(255,255,255,0.5)' }}>{subtitle}</p>}
         {description && <p>{description}</p>}
       </div>
     </section>

@@ -1,26 +1,25 @@
 import { useEffect, useRef } from 'preact/hooks'
 import { Hero } from '../components/Hero.jsx'
+import { useLang } from '../context/LangContext.jsx'
 import '../styles/products.css'
 
 const BASE = '/gulf-developers'
 
 const categories = [
   {
-    title: 'Tower Cranes',
-    titleAr: 'الرافعات البرجية',
+    titleKey: 'cat.cranes',
+    descKey: 'pcat.cranes.desc',
     headerImage: 'crane1.jpg',
-    description:
-      'High-performance tower cranes from world-leading manufacturers, designed for projects of every scale. Our range covers flat-top and hammerhead configurations with capacities from 5 to 12 tonnes.',
     products: [
       {
         name: 'Potain MCT 85 F5',
         badge: 'France',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
-          { label: 'Max Capacity', value: '5 Tonnes' },
-          { label: 'Jib Length', value: '52 m' },
-          { label: 'Max Height', value: '62 m' },
-          { label: 'Manufacturer', value: 'Manitowoc' },
+          { labelKey: 'spec.maxCapacity', value: '5 Tonnes' },
+          { labelKey: 'spec.jibLength', value: '52 m' },
+          { labelKey: 'spec.maxHeight', value: '62 m' },
+          { labelKey: 'spec.manufacturer', value: 'Manitowoc' },
         ],
       },
       {
@@ -28,10 +27,10 @@ const categories = [
         badge: 'China',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
-          { label: 'Max Capacity', value: '12 Tonnes' },
-          { label: 'Jib Length', value: '55 m' },
-          { label: 'Max Height', value: '75 m' },
-          { label: 'Manufacturer', value: 'Zoomlion' },
+          { labelKey: 'spec.maxCapacity', value: '12 Tonnes' },
+          { labelKey: 'spec.jibLength', value: '55 m' },
+          { labelKey: 'spec.maxHeight', value: '75 m' },
+          { labelKey: 'spec.manufacturer', value: 'Zoomlion' },
         ],
       },
       {
@@ -39,30 +38,28 @@ const categories = [
         badge: 'Germany',
         gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
         specs: [
-          { label: 'Max Capacity', value: '5 Tonnes' },
-          { label: 'Type', value: 'Flat-Top' },
-          { label: 'Max Height', value: '58 m' },
-          { label: 'Manufacturer', value: 'Liebherr' },
+          { labelKey: 'spec.maxCapacity', value: '5 Tonnes' },
+          { labelKey: 'spec.type', value: 'Flat-Top' },
+          { labelKey: 'spec.maxHeight', value: '58 m' },
+          { labelKey: 'spec.manufacturer', value: 'Liebherr' },
         ],
       },
     ],
   },
   {
-    title: 'Construction Hoists',
-    titleAr: 'مصاعد البناء',
+    titleKey: 'cat.hoists',
+    descKey: 'pcat.hoists.desc',
     headerImage: 'construction.jpg',
-    description:
-      'Safe and efficient vertical transportation solutions for personnel and materials. Our construction hoists are engineered for reliability, offering capacities from 1,500 kg to 3,200 kg with heights up to 96 meters.',
     products: [
       {
         name: 'GD Scando 650',
         badge: 'Bestseller',
         gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
-          { label: 'Capacity', value: '2,000 kg' },
-          { label: 'Max Height', value: '96 m' },
-          { label: 'Speed', value: '54 m/min' },
-          { label: 'Type', value: 'Personnel & Material' },
+          { labelKey: 'spec.capacity', value: '2,000 kg' },
+          { labelKey: 'spec.maxHeight', value: '96 m' },
+          { labelKey: 'spec.speed', value: '54 m/min' },
+          { labelKey: 'spec.type', value: 'Personnel & Material' },
         ],
       },
       {
@@ -70,10 +67,10 @@ const categories = [
         badge: 'Heavy Duty',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
-          { label: 'Capacity', value: '3,200 kg' },
-          { label: 'Max Height', value: '150 m' },
-          { label: 'Speed', value: '72 m/min' },
-          { label: 'Type', value: 'Heavy Material' },
+          { labelKey: 'spec.capacity', value: '3,200 kg' },
+          { labelKey: 'spec.maxHeight', value: '150 m' },
+          { labelKey: 'spec.speed', value: '72 m/min' },
+          { labelKey: 'spec.type', value: 'Heavy Material' },
         ],
       },
       {
@@ -81,30 +78,28 @@ const categories = [
         badge: 'Compact',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.08) 100%)',
         specs: [
-          { label: 'Capacity', value: '1,500 kg' },
-          { label: 'Max Height', value: '60 m' },
-          { label: 'Speed', value: '36 m/min' },
-          { label: 'Type', value: 'Compact Sites' },
+          { labelKey: 'spec.capacity', value: '1,500 kg' },
+          { labelKey: 'spec.maxHeight', value: '60 m' },
+          { labelKey: 'spec.speed', value: '36 m/min' },
+          { labelKey: 'spec.type', value: 'Compact Sites' },
         ],
       },
     ],
   },
   {
-    title: 'Power Generators',
-    titleAr: 'مولدات الطاقة',
+    titleKey: 'cat.generators',
+    descKey: 'pcat.generators.desc',
     headerImage: 'generator.jpg',
-    description:
-      'Reliable diesel generator sets from leading engine manufacturers for continuous and standby power. Silent-type enclosures available for noise-sensitive environments. Ideal for construction sites, industrial facilities, and emergency backup.',
     products: [
       {
         name: 'Cummins 500kVA Diesel Generator',
         badge: 'Premium',
         gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
-          { label: 'Power', value: '500 kVA' },
-          { label: 'Engine', value: 'Cummins QSZ13' },
-          { label: 'Frequency', value: '50 Hz' },
-          { label: 'Type', value: 'Open / Silent' },
+          { labelKey: 'spec.power', value: '500 kVA' },
+          { labelKey: 'spec.engine', value: 'Cummins QSZ13' },
+          { labelKey: 'spec.frequency', value: '50 Hz' },
+          { labelKey: 'spec.type', value: 'Open / Silent' },
         ],
       },
       {
@@ -112,10 +107,10 @@ const categories = [
         badge: 'Efficient',
         gradient: 'linear-gradient(135deg, #2a2420 0%, #1a1410 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
-          { label: 'Power', value: '350 kVA' },
-          { label: 'Engine', value: 'Baudouin 6M16' },
-          { label: 'Frequency', value: '50 Hz' },
-          { label: 'Type', value: 'Silent Canopy' },
+          { labelKey: 'spec.power', value: '350 kVA' },
+          { labelKey: 'spec.engine', value: 'Baudouin 6M16' },
+          { labelKey: 'spec.frequency', value: '50 Hz' },
+          { labelKey: 'spec.type', value: 'Silent Canopy' },
         ],
       },
       {
@@ -123,30 +118,28 @@ const categories = [
         badge: 'Silent',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
         specs: [
-          { label: 'Speed', value: '1500 RPM' },
-          { label: 'Noise', value: '<75 dB(A)' },
-          { label: 'Frequency', value: '50 Hz' },
-          { label: 'Type', value: 'Super Silent' },
+          { labelKey: 'spec.speed', value: '1500 RPM' },
+          { labelKey: 'spec.noise', value: '<75 dB(A)' },
+          { labelKey: 'spec.frequency', value: '50 Hz' },
+          { labelKey: 'spec.type', value: 'Super Silent' },
         ],
       },
     ],
   },
   {
-    title: 'Solar Energy Systems',
-    titleAr: 'أنظمة الطاقة الشمسية',
+    titleKey: 'cat.solar',
+    descKey: 'pcat.solar.desc',
     headerImage: 'solar2.jpg',
-    description:
-      'Complete solar energy solutions including high-efficiency monocrystalline panels, energy storage batteries, and system accessories. Designed for both on-grid and off-grid applications, reducing energy costs and environmental impact.',
     products: [
       {
         name: 'LONGI Hi-MO 6 600W Panel',
         badge: 'Latest',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #1a1410 60%, rgba(160, 125, 79, 0.12) 100%)',
         specs: [
-          { label: 'Power', value: '600 W' },
-          { label: 'Efficiency', value: '22.8%' },
-          { label: 'Type', value: 'Monocrystalline' },
-          { label: 'Manufacturer', value: 'LONGI Solar' },
+          { labelKey: 'spec.power', value: '600 W' },
+          { labelKey: 'spec.efficiency', value: '22.8%' },
+          { labelKey: 'spec.type', value: 'Monocrystalline' },
+          { labelKey: 'spec.manufacturer', value: 'LONGI Solar' },
         ],
       },
       {
@@ -154,10 +147,10 @@ const categories = [
         badge: 'Popular',
         gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
         specs: [
-          { label: 'Power', value: '550 W' },
-          { label: 'Efficiency', value: '21.3%' },
-          { label: 'Type', value: 'Monocrystalline' },
-          { label: 'Manufacturer', value: 'LONGI Solar' },
+          { labelKey: 'spec.power', value: '550 W' },
+          { labelKey: 'spec.efficiency', value: '21.3%' },
+          { labelKey: 'spec.type', value: 'Monocrystalline' },
+          { labelKey: 'spec.manufacturer', value: 'LONGI Solar' },
         ],
       },
       {
@@ -165,10 +158,10 @@ const categories = [
         badge: 'Storage',
         gradient: 'linear-gradient(135deg, #1a1410 0%, #211c18 60%, rgba(160, 125, 79, 0.08) 100%)',
         specs: [
-          { label: 'Voltage', value: '12V' },
-          { label: 'Capacity', value: '600 AH' },
-          { label: 'Type', value: 'Rechargeable' },
-          { label: 'Cycle Life', value: '3000+' },
+          { labelKey: 'spec.voltage', value: '12V' },
+          { labelKey: 'spec.capacity', value: '600 AH' },
+          { labelKey: 'spec.type', value: 'Rechargeable' },
+          { labelKey: 'spec.cycleLife', value: '3000+' },
         ],
       },
     ],
@@ -177,6 +170,7 @@ const categories = [
 
 export function Products() {
   const observerRef = useRef(null)
+  const { t } = useLang()
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -200,10 +194,9 @@ export function Products() {
   return (
     <div class="products-page">
       <Hero
-        title="Our Products"
-        subtitle="منتجاتنا"
-        breadcrumb="Products"
-        description="World-class construction equipment and energy systems sourced from leading global manufacturers."
+        title={t('productsPage.heroTitle')}
+        breadcrumb={t('productsPage.breadcrumb')}
+        description={t('productsPage.heroDesc')}
       />
 
       {categories.map((cat, catIdx) => (
@@ -212,7 +205,7 @@ export function Products() {
             <div class="product-category__banner fade-in">
               <img
                 src={`${BASE}/images/${cat.headerImage}`}
-                alt={cat.title}
+                alt={t(cat.titleKey)}
                 loading="lazy"
                 class="product-category__banner-img"
               />
@@ -222,9 +215,8 @@ export function Products() {
           <div class="container">
             <div class="product-category__header fade-in">
               <div class="gold-line" />
-              <h2>{cat.title}</h2>
-              {cat.titleAr && <p class="category-arabic">{cat.titleAr}</p>}
-              <p>{cat.description}</p>
+              <h2>{t(cat.titleKey)}</h2>
+              <p>{t(cat.descKey)}</p>
             </div>
             <div class="product-category__grid">
               {cat.products.map((product, i) => (
@@ -240,13 +232,13 @@ export function Products() {
                     <div class="product-item__specs">
                       {product.specs.map((spec, si) => (
                         <div class="product-item__spec" key={si}>
-                          <span class="product-item__spec-label">{spec.label}</span>
+                          <span class="product-item__spec-label">{t(spec.labelKey)}</span>
                           <span class="product-item__spec-value">{spec.value}</span>
                         </div>
                       ))}
                     </div>
                     <a href={`${BASE}/contact`} class="product-item__cta">
-                      Request Quote
+                      {t('productsPage.requestQuote')}
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <line x1="5" y1="12" x2="19" y2="12" />
                         <polyline points="12 5 19 12 12 19" />
@@ -264,9 +256,8 @@ export function Products() {
       <section class="why-gd">
         <div class="container">
           <div class="why-gd__inner fade-in">
-            <h3>Why Gulf Developers?</h3>
-            <p class="arabic-sub">لماذا الخليج المطورة؟</p>
-            <p>Direct brand authorization means genuine parts, factory warranty, and certified after-sales support across Iraq.</p>
+            <h3>{t('productsPage.whyGD')}</h3>
+            <p>{t('productsPage.whyGDdesc')}</p>
           </div>
         </div>
       </section>
@@ -275,14 +266,11 @@ export function Products() {
       <section class="cta-section">
         <div class="container">
           <div class="cta-section__inner fade-in">
-            <h2>Need Custom Specifications?</h2>
-            <p>
-              Our team can source equipment tailored to your exact project requirements.
-              Contact us for a personalized consultation.
-            </p>
+            <h2>{t('productsPage.customTitle')}</h2>
+            <p>{t('productsPage.customDesc')}</p>
             <div class="cta-section__actions">
               <a href={`${BASE}/contact`} class="btn btn--primary">
-                Contact Our Team
+                {t('productsPage.contactTeam')}
               </a>
             </div>
           </div>

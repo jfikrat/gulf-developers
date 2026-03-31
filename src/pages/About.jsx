@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'preact/hooks'
 import { Hero } from '../components/Hero.jsx'
+import { useLang } from '../context/LangContext.jsx'
 import '../styles/about.css'
 
 const BASE = '/gulf-developers'
 
 export function About() {
   const observerRef = useRef(null)
+  const { t } = useLang()
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -29,10 +31,9 @@ export function About() {
   return (
     <div>
       <Hero
-        title="About Us"
-        subtitle="من نحن"
-        breadcrumb="About"
-        description="Over 15 years of delivering excellence in construction equipment and energy solutions across Iraq and the region."
+        title={t('about.heroTitle')}
+        breadcrumb={t('about.breadcrumb')}
+        description={t('about.heroDesc')}
       />
 
       {/* Company Story */}
@@ -48,30 +49,15 @@ export function About() {
               />
               <div class="about-story__image-inner">
                 <div class="about-story__image-year">2010</div>
-                <div class="about-story__image-text">Established in Baghdad</div>
+                <div class="about-story__image-text">{t('about.established')}</div>
               </div>
             </div>
             <div class="about-story__content fade-in-right">
-              <h2>Our Story</h2>
+              <h2>{t('about.storyTitle')}</h2>
               <div class="gold-line" />
-              <p>
-                Founded in 2010, Gulf Developers General Contracting has grown from a
-                specialized equipment supplier into one of Iraq's most respected construction
-                and energy solutions providers. Our journey began with a clear vision: to bring
-                world-class construction technology to the Iraqi market.
-              </p>
-              <p>
-                Over the years, we have built strong partnerships with global manufacturers
-                including Potain, Liebherr, Zoomlion, Cummins, and LONGI Solar. These
-                relationships enable us to offer cutting-edge equipment backed by comprehensive
-                after-sales support.
-              </p>
-              <p>
-                Today, we serve clients across Iraq, Kurdistan, and neighboring countries,
-                providing end-to-end solutions from equipment supply and installation to
-                maintenance and operator training. Our track record of over 200 successfully
-                completed projects speaks to our commitment to quality and reliability.
-              </p>
+              <p>{t('about.storyP1')}</p>
+              <p>{t('about.storyP2')}</p>
+              <p>{t('about.storyP3')}</p>
             </div>
           </div>
         </div>
@@ -82,8 +68,8 @@ export function About() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
-            <h2>Vision, Mission & Values</h2>
-            <p>The principles that guide everything we do.</p>
+            <h2>{t('vmv.title')}</h2>
+            <p>{t('vmv.desc')}</p>
           </div>
           <div class="vmv__grid">
             <div class="vmv__card fade-in">
@@ -94,13 +80,8 @@ export function About() {
                   <circle cx="12" cy="12" r="2" />
                 </svg>
               </div>
-              <h3>Vision</h3>
-              <p class="arabic-sub">رؤيتنا</p>
-              <p>
-                To be the leading construction equipment and energy solutions provider in Iraq
-                and the broader Middle East, setting the standard for quality, innovation,
-                and reliability in every project we undertake.
-              </p>
+              <h3>{t('vmv.vision')}</h3>
+              <p>{t('vmv.visionDesc')}</p>
             </div>
             <div class="vmv__card fade-in" style={{ transitionDelay: '0.1s' }}>
               <div class="vmv__icon">
@@ -108,13 +89,8 @@ export function About() {
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
               </div>
-              <h3>Mission</h3>
-              <p class="arabic-sub">رسالتنا</p>
-              <p>
-                To empower Iraq's construction and infrastructure sectors by providing
-                world-class equipment, expert technical services, and sustainable energy
-                solutions that drive progress and economic development.
-              </p>
+              <h3>{t('vmv.mission')}</h3>
+              <p>{t('vmv.missionDesc')}</p>
             </div>
             <div class="vmv__card fade-in" style={{ transitionDelay: '0.2s' }}>
               <div class="vmv__icon">
@@ -122,13 +98,8 @@ export function About() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
-              <h3>Values</h3>
-              <p class="arabic-sub">قيمنا</p>
-              <p>
-                Integrity in every transaction. Excellence in every delivery. Safety as a
-                non-negotiable standard. Innovation in solutions. Partnership with our clients,
-                building lasting relationships based on trust and mutual success.
-              </p>
+              <h3>{t('vmv.values')}</h3>
+              <p>{t('vmv.valuesDesc')}</p>
             </div>
           </div>
         </div>
@@ -139,45 +110,29 @@ export function About() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
-            <h2>Why Choose Us</h2>
-            <p>What sets Gulf Developers apart from the competition.</p>
+            <h2>{t('why.title')}</h2>
+            <p>{t('why.desc')}</p>
           </div>
           <div class="why-us__grid">
             <div class="why-us__card fade-in">
               <div class="why-us__number">01</div>
-              <h3>Expertise</h3>
-              <p>
-                Our team brings over 15 years of specialized experience in construction
-                equipment and energy systems, with deep knowledge of the Iraqi market's
-                unique requirements and challenges.
-              </p>
+              <h3>{t('why.expertise')}</h3>
+              <p>{t('why.expertiseDesc')}</p>
             </div>
             <div class="why-us__card fade-in" style={{ transitionDelay: '0.1s' }}>
               <div class="why-us__number">02</div>
-              <h3>Quality</h3>
-              <p>
-                We partner exclusively with globally recognized manufacturers. Every piece
-                of equipment we supply meets international safety standards and comes with
-                full manufacturer warranty.
-              </p>
+              <h3>{t('why.quality')}</h3>
+              <p>{t('why.qualityDesc')}</p>
             </div>
             <div class="why-us__card fade-in" style={{ transitionDelay: '0.2s' }}>
               <div class="why-us__number">03</div>
-              <h3>Support</h3>
-              <p>
-                From initial consultation through installation, training, and ongoing
-                maintenance, we provide comprehensive support throughout the entire
-                equipment lifecycle.
-              </p>
+              <h3>{t('why.support')}</h3>
+              <p>{t('why.supportDesc')}</p>
             </div>
             <div class="why-us__card fade-in" style={{ transitionDelay: '0.3s' }}>
               <div class="why-us__number">04</div>
-              <h3>Innovation</h3>
-              <p>
-                We continuously invest in the latest technology and sustainable energy
-                solutions, helping our clients reduce costs while minimizing environmental
-                impact on their projects.
-              </p>
+              <h3>{t('why.innovation')}</h3>
+              <p>{t('why.innovationDesc')}</p>
             </div>
           </div>
         </div>
@@ -188,28 +143,28 @@ export function About() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
-            <h2>Company Registration</h2>
-            <p>Our official credentials and certifications.</p>
+            <h2>{t('reg.title')}</h2>
+            <p>{t('reg.desc')}</p>
           </div>
           <div class="company-reg__grid">
             <div class="company-reg__item fade-in">
-              <strong>Registration</strong>
-              <span>Baghdad Chamber of Commerce</span>
+              <strong>{t('reg.registration')}</strong>
+              <span>{t('reg.registrationVal')}</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.1s' }}>
-              <strong>License</strong>
-              <span>General Contracting — Class A</span>
+              <strong>{t('reg.license')}</strong>
+              <span>{t('reg.licenseVal')}</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.2s' }}>
-              <strong>Established</strong>
+              <strong>{t('reg.established')}</strong>
               <span>2010</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.3s' }}>
-              <strong>Management</strong>
-              <span>General Management Office</span>
+              <strong>{t('reg.management')}</strong>
+              <span>{t('reg.managementVal')}</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.4s' }}>
-              <strong>Quality Management</strong>
+              <strong>{t('reg.quality')}</strong>
               <span>ISO 9001:2015</span>
             </div>
           </div>
@@ -223,8 +178,8 @@ export function About() {
                   <polyline points="9 12 11 14 15 10" />
                 </svg>
               </div>
-              <h4 class="cert-badge__title">ISO 9001:2015</h4>
-              <span class="cert-badge__sub">Quality Management</span>
+              <h4 class="cert-badge__title">{t('cert.iso')}</h4>
+              <span class="cert-badge__sub">{t('cert.isoSub')}</span>
             </div>
             <div class="cert-badge">
               <div class="cert-badge__icon">
@@ -234,8 +189,8 @@ export function About() {
                   <polyline points="9 14 11 16 15 12" />
                 </svg>
               </div>
-              <h4 class="cert-badge__title">Licensed Contractor</h4>
-              <span class="cert-badge__sub">Class A — Republic of Iraq</span>
+              <h4 class="cert-badge__title">{t('cert.contractor')}</h4>
+              <span class="cert-badge__sub">{t('cert.contractorSub')}</span>
             </div>
             <div class="cert-badge">
               <div class="cert-badge__icon">
@@ -243,8 +198,8 @@ export function About() {
                   <path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-6h6v6" />
                 </svg>
               </div>
-              <h4 class="cert-badge__title">Baghdad Chamber</h4>
-              <span class="cert-badge__sub">Registered Member</span>
+              <h4 class="cert-badge__title">{t('cert.chamber')}</h4>
+              <span class="cert-badge__sub">{t('cert.chamberSub')}</span>
             </div>
             <div class="cert-badge">
               <div class="cert-badge__icon">
@@ -252,8 +207,8 @@ export function About() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
-              <h4 class="cert-badge__title">Safety Certified</h4>
-              <span class="cert-badge__sub">HSE Compliance</span>
+              <h4 class="cert-badge__title">{t('cert.safety')}</h4>
+              <span class="cert-badge__sub">{t('cert.safetySub')}</span>
             </div>
           </div>
 
@@ -265,7 +220,7 @@ export function About() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download Company Profile
+              {t('reg.download')}
             </a>
           </div>
         </div>
@@ -276,8 +231,8 @@ export function About() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
-            <h2>Our Clients</h2>
-            <p>Trusted by leading organizations across Iraq.</p>
+            <h2>{t('clients.title')}</h2>
+            <p>{t('clients.desc')}</p>
           </div>
           <div class="our-clients__grid">
             <div class="our-clients__card fade-in">Al-Hilal Construction Group</div>
@@ -294,8 +249,8 @@ export function About() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
-            <h2>Project Highlights</h2>
-            <p>A selection of our major accomplishments.</p>
+            <h2>{t('highlights.title')}</h2>
+            <p>{t('highlights.desc')}</p>
           </div>
           <div class="projects-highlights__grid">
             <div class="projects-highlights__card fade-in">
@@ -304,8 +259,8 @@ export function About() {
                   <path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-6h6v6" />
                 </svg>
               </div>
-              <h3>200+ Tower Crane Installations</h3>
-              <p>Successfully installed and commissioned over 200 tower cranes across construction sites in Iraq.</p>
+              <h3>{t('highlights.cranes')}</h3>
+              <p>{t('highlights.cranesDesc')}</p>
             </div>
             <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.1s' }}>
               <div class="projects-highlights__icon">
@@ -315,8 +270,8 @@ export function About() {
                   <line x1="8" y1="12" x2="16" y2="12" />
                 </svg>
               </div>
-              <h3>50MW Solar Farm Support</h3>
-              <p>Equipment supply and technical support for a 50MW solar farm project in the Kurdistan Region.</p>
+              <h3>{t('highlights.solar')}</h3>
+              <p>{t('highlights.solarDesc')}</p>
             </div>
             <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.2s' }}>
               <div class="projects-highlights__icon">
@@ -324,8 +279,8 @@ export function About() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3" />
                 </svg>
               </div>
-              <h3>Baghdad Airport Expansion</h3>
-              <p>Equipment supply for the Baghdad International Airport expansion project.</p>
+              <h3>{t('highlights.airport')}</h3>
+              <p>{t('highlights.airportDesc')}</p>
             </div>
             <div class="projects-highlights__card fade-in" style={{ transitionDelay: '0.3s' }}>
               <div class="projects-highlights__icon">
@@ -334,8 +289,8 @@ export function About() {
                   <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
                 </svg>
               </div>
-              <h3>Basra Residential Complex</h3>
-              <p>150-unit residential complex — crane and hoist supply, installation, and operator training.</p>
+              <h3>{t('highlights.basra')}</h3>
+              <p>{t('highlights.basraDesc')}</p>
             </div>
           </div>
         </div>
@@ -346,18 +301,10 @@ export function About() {
         <div class="container">
           <div class="team-section__inner">
             <div class="team-section__content fade-in-left">
-              <h2>Our Team</h2>
+              <h2>{t('team.title')}</h2>
               <div class="gold-line" />
-              <p>
-                Gulf Developers is powered by a team of over 50 dedicated professionals,
-                including certified engineers, equipment specialists, and project managers
-                with extensive experience in the construction and energy sectors.
-              </p>
-              <p>
-                Our leadership team combines decades of industry expertise with a deep
-                understanding of the regional market, ensuring every project receives
-                the strategic oversight it deserves.
-              </p>
+              <p>{t('team.desc1')}</p>
+              <p>{t('team.desc2')}</p>
               <div class="team-section__roles">
                 <div class="team-section__role">
                   <div class="team-section__role-icon">
@@ -367,8 +314,8 @@ export function About() {
                     </svg>
                   </div>
                   <div class="team-section__role-info">
-                    <h4>General Manager</h4>
-                    <p>Strategic leadership and business development</p>
+                    <h4>{t('team.gm')}</h4>
+                    <p>{t('team.gmDesc')}</p>
                   </div>
                 </div>
                 <div class="team-section__role">
@@ -378,8 +325,8 @@ export function About() {
                     </svg>
                   </div>
                   <div class="team-section__role-info">
-                    <h4>Chief Engineer</h4>
-                    <p>Technical operations and equipment management</p>
+                    <h4>{t('team.ce')}</h4>
+                    <p>{t('team.ceDesc')}</p>
                   </div>
                 </div>
                 <div class="team-section__role">
@@ -392,8 +339,8 @@ export function About() {
                     </svg>
                   </div>
                   <div class="team-section__role-info">
-                    <h4>Project Managers</h4>
-                    <p>On-site coordination and client relations</p>
+                    <h4>{t('team.pm')}</h4>
+                    <p>{t('team.pmDesc')}</p>
                   </div>
                 </div>
               </div>

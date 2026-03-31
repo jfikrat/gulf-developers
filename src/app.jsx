@@ -1,4 +1,5 @@
 import Router from 'preact-router'
+import { LangProvider } from './context/LangContext.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import { Footer } from './components/Footer.jsx'
 import { ScrollToTop } from './components/ScrollToTop.jsx'
@@ -10,7 +11,7 @@ import { Contact } from './pages/Contact.jsx'
 
 export function App() {
   return (
-    <>
+    <LangProvider>
       <Navbar />
       <ScrollToTop />
       <main>
@@ -24,6 +25,6 @@ export function App() {
         </Router>
       </main>
       <Footer />
-    </>
+    </LangProvider>
   )
 }

@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'preact/hooks'
 import { useRouter } from 'preact-router'
+import { useLang } from '../context/LangContext.jsx'
 import '../styles/navbar.css'
 
 const BASE = '/gulf-developers'
 
-const links = [
-  { href: `${BASE}/`, label: 'Home' },
-  { href: `${BASE}/about`, label: 'About' },
-  { href: `${BASE}/products`, label: 'Products' },
-  { href: `${BASE}/services`, label: 'Services' },
-  { href: `${BASE}/contact`, label: 'Contact' },
+const linkKeys = [
+  { href: `${BASE}/`, key: 'nav.home' },
+  { href: `${BASE}/about`, key: 'nav.about' },
+  { href: `${BASE}/products`, key: 'nav.products' },
+  { href: `${BASE}/services`, key: 'nav.services' },
+  { href: `${BASE}/contact`, key: 'nav.contact' },
 ]
 
 export function Navbar() {
@@ -17,6 +18,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [result] = useRouter()
   const currentPath = result?.url || '/'
+  const { lang, toggle, t } = useLang()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -47,24 +49,40 @@ export function Navbar() {
         <a href={`${BASE}/`} class="navbar__logo">
           <div class="navbar__monogram">GD</div>
           <div class="navbar__brand">
-            <span class="navbar__brand-name">Gulf Developers</span>
-            <span class="navbar__brand-sub">General Contracting</span>
+            <span class="navbar__brand-name">{t('nav.brandName')}</span>
+            <span class="navbar__brand-sub">{t('nav.brandSub')}</span>
           </div>
         </a>
 
         <div class="navbar__links">
-          {links.map((link) => (
+          {linkKeys.map((link) => (
             <a
               key={link.href}
               href={link.href}
               class={`navbar__link ${isActive(link.href) ? 'navbar__link--active' : ''}`}
               {...(isActive(link.href) ? { 'aria-current': 'page' } : {})}
             >
-              {link.label}
+              {t(link.key)}
             </a>
           ))}
+          <div class="lang-toggle">
+            <button
+              class={lang === 'en' ? 'active' : ''}
+              onClick={lang !== 'en' ? toggle : undefined}
+              aria-label="English"
+            >
+              EN
+            </button>
+            <button
+              class={lang === 'ar' ? 'active' : ''}
+              onClick={lang !== 'ar' ? toggle : undefined}
+              aria-label="العربية"
+            >
+              عربي
+            </button>
+          </div>
           <a href={`${BASE}/contact`} class="btn btn--primary navbar__cta">
-            Get Quote
+            {t('nav.getQuote')}
           </a>
         </div>
 
@@ -81,18 +99,34 @@ export function Navbar() {
       </div>
 
       <div class={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
-        {links.map((link) => (
+        {linkKeys.map((link) => (
           <a
             key={link.href}
             href={link.href}
             class={`navbar__link ${isActive(link.href) ? 'navbar__link--active' : ''}`}
             {...(isActive(link.href) ? { 'aria-current': 'page' } : {})}
           >
-            {link.label}
+            {t(link.key)}
           </a>
         ))}
+        <div class="lang-toggle" style={{ marginTop: '8px' }}>
+          <button
+            class={lang === 'en' ? 'active' : ''}
+            onClick={lang !== 'en' ? toggle : undefined}
+            aria-label="English"
+          >
+            EN
+          </button>
+          <button
+            class={lang === 'ar' ? 'active' : ''}
+            onClick={lang !== 'ar' ? toggle : undefined}
+            aria-label="العربية"
+          >
+            عربي
+          </button>
+        </div>
         <a href={`${BASE}/contact`} class="btn btn--primary" style={{ marginTop: '16px' }}>
-          Get Quote
+          {t('nav.getQuote')}
         </a>
       </div>
     </nav>

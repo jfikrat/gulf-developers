@@ -1,9 +1,11 @@
+import { useLang } from '../context/LangContext.jsx'
 import '../styles/footer.css'
 
 const BASE = '/gulf-developers'
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const { t } = useLang()
 
   return (
     <footer class="footer">
@@ -14,13 +16,10 @@ export function Footer() {
             <div class="footer__brand">
               <div class="footer__brand-logo">
                 <div class="navbar__monogram">GD</div>
-                <span>Gulf Developers</span>
+                <span>{t('nav.brandName')}</span>
               </div>
-              <p class="arabic-name">الخليج المطورة للمقاولات العامة</p>
-              <p>
-                Providing premium construction equipment, energy solutions, and general contracting
-                services across Iraq and the Middle East since 2010.
-              </p>
+              <p class="arabic-name">{t('footer.arabicName')}</p>
+              <p>{t('footer.desc')}</p>
               <div class="footer__social">
                 <a href="https://facebook.com/gulfdevelopersiq" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
                 <a href="https://linkedin.com/company/gulf-developers-iq" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
@@ -30,31 +29,31 @@ export function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h4 class="footer__heading">Quick Links</h4>
+              <h4 class="footer__heading">{t('footer.quickLinks')}</h4>
               <div class="footer__links">
-                <a href={`${BASE}/`}>Home</a>
-                <a href={`${BASE}/about`}>About Us</a>
-                <a href={`${BASE}/products`}>Products</a>
-                <a href={`${BASE}/services`}>Services</a>
-                <a href={`${BASE}/contact`}>Contact</a>
+                <a href={`${BASE}/`}>{t('nav.home')}</a>
+                <a href={`${BASE}/about`}>{t('footer.aboutUs')}</a>
+                <a href={`${BASE}/products`}>{t('footer.products')}</a>
+                <a href={`${BASE}/services`}>{t('nav.services')}</a>
+                <a href={`${BASE}/contact`}>{t('nav.contact')}</a>
               </div>
             </div>
 
             {/* Products */}
             <div>
-              <h4 class="footer__heading">Products</h4>
+              <h4 class="footer__heading">{t('footer.products')}</h4>
               <div class="footer__links">
-                <a href={`${BASE}/products`}>Tower Cranes</a>
-                <a href={`${BASE}/products`}>Construction Hoists</a>
-                <a href={`${BASE}/products`}>Power Generators</a>
-                <a href={`${BASE}/products`}>Solar Energy Systems</a>
-                <a href={`${BASE}/products`}>Electrical Equipment</a>
+                <a href={`${BASE}/products`}>{t('footer.towerCranes')}</a>
+                <a href={`${BASE}/products`}>{t('footer.hoists')}</a>
+                <a href={`${BASE}/products`}>{t('footer.generators')}</a>
+                <a href={`${BASE}/products`}>{t('footer.solarSystems')}</a>
+                <a href={`${BASE}/products`}>{t('footer.electrical')}</a>
               </div>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 class="footer__heading">Contact Us</h4>
+              <h4 class="footer__heading">{t('footer.contactUs')}</h4>
               <div class="footer__contact-item">
                 <div class="footer__contact-icon">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -63,8 +62,8 @@ export function Footer() {
                   </svg>
                 </div>
                 <div class="footer__contact-text">
-                  <strong>Address</strong>
-                  Baghdad, Al-Dawoody, Iraq
+                  <strong>{t('footer.address')}</strong>
+                  {t('footer.addressVal')}
                 </div>
               </div>
               <div class="footer__contact-item">
@@ -74,7 +73,7 @@ export function Footer() {
                   </svg>
                 </div>
                 <div class="footer__contact-text">
-                  <strong>Phone</strong>
+                  <strong>{t('footer.phone')}</strong>
                   <a href="tel:+9647860000018">+964 786 000 0018</a>
                 </div>
               </div>
@@ -86,7 +85,7 @@ export function Footer() {
                   </svg>
                 </div>
                 <div class="footer__contact-text">
-                  <strong>Email</strong>
+                  <strong>{t('footer.email')}</strong>
                   <a href="mailto:info@gulfdevelopersiq.com">info@gulfdevelopersiq.com</a>
                 </div>
               </div>
@@ -99,10 +98,10 @@ export function Footer() {
       <div class="footer__bottom">
         <div class="container">
           <div class="footer__bottom-inner">
-            <span>&copy; {year} Gulf Developers General Contracting. All rights reserved.</span>
-            <span class="footer__registration">Registered Contractor — Baghdad, Iraq | Est. 2010</span>
-            <span class="footer__license">Licensed General Contractor — Republic of Iraq</span>
-            <span>Gulf Developers General Contracting Co.</span>
+            <span>&copy; {year} {t('footer.companyFull')} {t('footer.rights')}</span>
+            <span class="footer__registration">{t('footer.registered')}</span>
+            <span class="footer__license">{t('footer.licensed')}</span>
+            <span>{t('footer.companyFull')}</span>
           </div>
         </div>
       </div>
