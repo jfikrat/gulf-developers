@@ -100,7 +100,7 @@ export function Footer() {
         <div class="container">
           <div class="footer__bottom-inner">
             <span>&copy; {year} Gulf Developers General Contracting. All rights reserved.</span>
-            <span class="footer__registration">CR: 12345 | Baghdad Chamber of Commerce</span>
+            <span class="footer__registration">Registered Contractor — Baghdad, Iraq | Est. 2010</span>
             <span class="footer__license">Licensed General Contractor — Republic of Iraq</span>
             <span>
               <a href="https://gulfdevelopers.com.iq">gulfdevelopers.com.iq</a>

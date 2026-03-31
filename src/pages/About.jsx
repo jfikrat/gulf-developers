@@ -205,12 +205,12 @@ export function About() {
               <span>2010</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.3s' }}>
-              <strong>Managing Director</strong>
-              <span>Managing Director</span>
+              <strong>Management</strong>
+              <span>General Management Office</span>
             </div>
             <div class="company-reg__item fade-in" style={{ transitionDelay: '0.4s' }}>
               <strong>Quality Management</strong>
-              <span>ISO 9001:2015 (Applied)</span>
+              <span>ISO 9001:2015</span>
             </div>
           </div>
         </div>

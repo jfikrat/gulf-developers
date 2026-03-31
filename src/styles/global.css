@@ -329,6 +329,20 @@ p {
   max-width: 600px;
 }
 
+/* ===== Arabic Subtitles (global) ===== */
+.page-hero .arabic-sub {
+  color: rgba(255,255,255,0.5);
+}
+
+.category-arabic {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  direction: rtl;
+  font-weight: 300;
+  margin-top: -4px;
+  margin-bottom: 20px;
+}
+
 /* ===== Scroll Animations ===== */
 .fade-in {
   opacity: 0;

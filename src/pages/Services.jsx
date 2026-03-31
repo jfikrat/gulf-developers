@@ -14,6 +14,7 @@ const services = [
       </svg>
     ),
     title: 'Equipment Supply',
+    titleAr: 'توريد المعدات',
     desc: 'We supply premium construction equipment from globally recognized manufacturers including Potain, Liebherr, Zoomlion, Cummins, and LONGI Solar. Every piece of equipment undergoes rigorous quality inspection before delivery.',
     features: [
       'Tower cranes, hoists, and lifting equipment',
@@ -31,6 +32,7 @@ const services = [
       </svg>
     ),
     title: 'Installation & Setup',
+    titleAr: 'التركيب والتشغيل',
     desc: 'Our certified engineering teams handle complete on-site installation of all equipment. From foundation preparation to final commissioning, we ensure every installation meets manufacturer specifications and local safety regulations.',
     features: [
       'Site survey and foundation design',
@@ -49,6 +51,7 @@ const services = [
       </svg>
     ),
     title: 'Maintenance & Repair',
+    titleAr: 'الصيانة والإصلاح',
     desc: 'Maximize equipment uptime with our comprehensive maintenance programs. Our technicians provide scheduled preventive maintenance, emergency repair services, and genuine spare parts to keep your operations running smoothly.',
     features: [
       'Scheduled preventive maintenance plans',
@@ -68,6 +71,7 @@ const services = [
       </svg>
     ),
     title: 'Energy & Solar Solutions',
+    titleAr: 'حلول الطاقة والطاقة الشمسية',
     desc: 'Complete energy solutions from diesel generators to full solar installations. We design, supply, and install hybrid energy systems that reduce operational costs while providing reliable power for construction sites and facilities.',
     features: [
       'Solar panel system design and installation',
@@ -86,6 +90,7 @@ const services = [
       </svg>
     ),
     title: 'Technical Consultation',
+    titleAr: 'الاستشارات الفنية',
     desc: 'Leverage our expertise before and during your project. Our engineers provide detailed technical analysis, equipment recommendations, and project planning to ensure you select the right solutions for your specific requirements.',
     features: [
       'Equipment selection and specification review',
@@ -106,6 +111,7 @@ const services = [
       </svg>
     ),
     title: 'Training Programs',
+    titleAr: 'برامج التدريب',
     desc: 'Equip your workforce with the skills they need. Our comprehensive training programs cover equipment operation, safety protocols, and maintenance procedures, delivered by certified instructors with real-world experience.',
     features: [
       'Crane and hoist operator certification',
@@ -167,6 +173,7 @@ export function Services() {
     <div class="services-page">
       <Hero
         title="Our Services"
+        subtitle="خدماتنا"
         breadcrumb="Services"
         description="End-to-end construction equipment and energy solutions, from supply to installation, maintenance, and training."
       />
@@ -192,6 +199,7 @@ export function Services() {
                   </div>
                 </div>
                 <h3>{service.title}</h3>
+                {service.titleAr && <p class="arabic-sub">{service.titleAr}</p>}
                 <p>{service.desc}</p>
                 <div class="service-detail-card__features">
                   {service.features.map((f, fi) => (
@@ -212,6 +220,7 @@ export function Services() {
         <div class="container">
           <div class="section-header fade-in">
             <div class="gold-line" />
+            <p class="arabic-sub">الأسئلة الشائعة</p>
             <h2>Frequently Asked Questions</h2>
             <p>Find answers to the most common questions about our services.</p>
           </div>
@@ -223,12 +232,20 @@ export function Services() {
               >
                 <button
                   class="faq__question"
+                  id={`faq-btn-${i}`}
+                  aria-expanded={openFaq === i ? 'true' : 'false'}
+                  aria-controls={`faq-panel-${i}`}
                   onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
                 >
                   <span>{faq.q}</span>
                   <span class="faq__toggle">+</span>
                 </button>
-                <div class="faq__answer">
+                <div
+                  class="faq__answer"
+                  id={`faq-panel-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-btn-${i}`}
+                >
                   <div class="faq__answer-inner">{faq.a}</div>
                 </div>
               </div>
@@ -241,6 +258,7 @@ export function Services() {
       <section class="service-coverage">
         <div class="container">
           <div class="service-coverage__inner fade-in">
+            <p class="arabic-sub">تغطية الخدمات</p>
             <h3>Service Coverage</h3>
             <p>We serve all major Iraqi cities: Baghdad, Basra, Erbil, Sulaymaniyah, Najaf, and Karbala.</p>
           </div>
