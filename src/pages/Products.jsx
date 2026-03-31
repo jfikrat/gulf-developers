@@ -14,7 +14,7 @@ const categories = [
       {
         name: 'Potain MCT 85 F5',
         badge: 'France',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
+        image: `${BASE}/images/products/crane-potain.jpg`,
         specs: [
           { labelKey: 'spec.maxCapacity', value: '5 Tonnes' },
           { labelKey: 'spec.jibLength', value: '52 m' },
@@ -25,7 +25,7 @@ const categories = [
       {
         name: 'Zoomlion TCL5522-12',
         badge: 'China',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
+        image: `${BASE}/images/products/crane-zoomlion.jpg`,
         specs: [
           { labelKey: 'spec.maxCapacity', value: '12 Tonnes' },
           { labelKey: 'spec.jibLength', value: '55 m' },
@@ -36,7 +36,7 @@ const categories = [
       {
         name: 'Liebherr 85 EC-B 5',
         badge: 'Germany',
-        gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
+        image: `${BASE}/images/products/crane-liebherr.jpg`,
         specs: [
           { labelKey: 'spec.maxCapacity', value: '5 Tonnes' },
           { labelKey: 'spec.type', value: 'Flat-Top' },
@@ -54,7 +54,7 @@ const categories = [
       {
         name: 'GD Scando 650',
         badge: 'Bestseller',
-        gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
+        image: `${BASE}/images/products/hoist-scando.jpg`,
         specs: [
           { labelKey: 'spec.capacity', value: '2,000 kg' },
           { labelKey: 'spec.maxHeight', value: '96 m' },
@@ -65,7 +65,7 @@ const categories = [
       {
         name: 'GD Mammoth',
         badge: 'Heavy Duty',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
+        image: `${BASE}/images/products/hoist-mammoth.jpg`,
         specs: [
           { labelKey: 'spec.capacity', value: '3,200 kg' },
           { labelKey: 'spec.maxHeight', value: '150 m' },
@@ -76,7 +76,7 @@ const categories = [
       {
         name: 'GD SC Range',
         badge: 'Compact',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.08) 100%)',
+        image: `${BASE}/images/products/hoist-sc.jpg`,
         specs: [
           { labelKey: 'spec.capacity', value: '1,500 kg' },
           { labelKey: 'spec.maxHeight', value: '60 m' },
@@ -94,7 +94,7 @@ const categories = [
       {
         name: 'Cummins 500kVA Diesel Generator',
         badge: 'Premium',
-        gradient: 'linear-gradient(135deg, #211c18 0%, #2a2420 60%, rgba(160, 125, 79, 0.12) 100%)',
+        image: `${BASE}/images/products/gen-cummins.jpg`,
         specs: [
           { labelKey: 'spec.power', value: '500 kVA' },
           { labelKey: 'spec.engine', value: 'Cummins QSZ13' },
@@ -105,7 +105,7 @@ const categories = [
       {
         name: 'Baudouin 350kVA Diesel Generator',
         badge: 'Efficient',
-        gradient: 'linear-gradient(135deg, #2a2420 0%, #1a1410 60%, rgba(160, 125, 79, 0.1) 100%)',
+        image: `${BASE}/images/products/gen-baudouin.jpg`,
         specs: [
           { labelKey: 'spec.power', value: '350 kVA' },
           { labelKey: 'spec.engine', value: 'Baudouin 6M16' },
@@ -116,7 +116,7 @@ const categories = [
       {
         name: 'Green Power 1500rpm Silent',
         badge: 'Silent',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #2a2420 60%, rgba(160, 125, 79, 0.15) 100%)',
+        image: `${BASE}/images/products/gen-greenpower.jpg`,
         specs: [
           { labelKey: 'spec.speed', value: '1500 RPM' },
           { labelKey: 'spec.noise', value: '<75 dB(A)' },
@@ -134,7 +134,7 @@ const categories = [
       {
         name: 'LONGI Hi-MO 6 600W Panel',
         badge: 'Latest',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #1a1410 60%, rgba(160, 125, 79, 0.12) 100%)',
+        image: `${BASE}/images/products/solar-himo6.jpg`,
         specs: [
           { labelKey: 'spec.power', value: '600 W' },
           { labelKey: 'spec.efficiency', value: '22.8%' },
@@ -145,7 +145,7 @@ const categories = [
       {
         name: 'LONGI Hi-MO 5M 550W Panel',
         badge: 'Popular',
-        gradient: 'linear-gradient(135deg, #2a2420 0%, #2a2420 60%, rgba(160, 125, 79, 0.1) 100%)',
+        image: `${BASE}/images/products/solar-himo5.jpg`,
         specs: [
           { labelKey: 'spec.power', value: '550 W' },
           { labelKey: 'spec.efficiency', value: '21.3%' },
@@ -156,7 +156,7 @@ const categories = [
       {
         name: '12V 600AH Battery Storage',
         badge: 'Storage',
-        gradient: 'linear-gradient(135deg, #1a1410 0%, #211c18 60%, rgba(160, 125, 79, 0.08) 100%)',
+        image: `${BASE}/images/products/solar-battery.jpg`,
         specs: [
           { labelKey: 'spec.voltage', value: '12V' },
           { labelKey: 'spec.capacity', value: '600 AH' },
@@ -221,8 +221,8 @@ export function Products() {
             <div class="product-category__grid">
               {cat.products.map((product, i) => (
                 <div class="product-item fade-in" style={{ transitionDelay: `${i * 0.1}s` }} key={i}>
-                  <div class="product-item__image" style={{ background: product.gradient }}>
-                    <span class="product-label">{product.name}</span>
+                  <div class="product-item__image">
+                    <img src={product.image} alt={product.name} loading="lazy" />
                     {product.badge && (
                       <span class="product-item__badge">{product.badge}</span>
                     )}
