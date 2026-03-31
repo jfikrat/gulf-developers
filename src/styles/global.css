@@ -426,7 +426,9 @@ p {
 }
 
 /* ===== RTL Support ===== */
-[dir="rtl"] {
+[dir="rtl"],
+[dir="rtl"] body {
+  direction: rtl;
   text-align: right;
 }
 
@@ -619,7 +621,11 @@ p {
 }
 
 /* Section header centered text stays centered in RTL */
-[dir="rtl"] .section-header {
+[dir="rtl"] .section-header,
+[dir="rtl"] .stats,
+[dir="rtl"] .cta-section__inner,
+[dir="rtl"] .trust-bar__label,
+[dir="rtl"] .page-hero__content {
   text-align: center;
 }
 
