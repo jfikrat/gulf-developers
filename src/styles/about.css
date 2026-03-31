@@ -13,9 +13,16 @@
 .about-story__image {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 50%, rgba(200, 164, 92, 0.1) 100%);
   position: relative;
   overflow: hidden;
+}
+
+.about-story__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-story__image::after {
@@ -24,6 +31,8 @@
   inset: 0;
   border: 1px solid rgba(200, 164, 92, 0.15);
   border-radius: var(--radius-lg);
+  background: linear-gradient(to top, rgba(10, 22, 40, 0.7) 0%, rgba(10, 22, 40, 0.1) 50%, transparent 100%);
+  z-index: 1;
 }
 
 .about-story__image-inner {
@@ -32,24 +41,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 8px;
+  z-index: 2;
 }
 
 .about-story__image-year {
   font-family: var(--font-heading);
   font-size: 4rem;
   color: var(--gold);
-  opacity: 0.3;
+  opacity: 0.6;
   letter-spacing: 4px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .about-story__image-text {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: var(--white);
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .about-story__content h2 {

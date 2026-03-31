@@ -7,6 +7,7 @@ const BASE = '/gulf-developers'
 const categories = [
   {
     title: 'Tower Cranes',
+    headerImage: 'crane1.jpg',
     description:
       'High-performance tower cranes from world-leading manufacturers, designed for projects of every scale. Our range covers flat-top and hammerhead configurations with capacities from 5 to 12 tonnes.',
     products: [
@@ -47,6 +48,7 @@ const categories = [
   },
   {
     title: 'Construction Hoists',
+    headerImage: 'construction.jpg',
     description:
       'Safe and efficient vertical transportation solutions for personnel and materials. Our construction hoists are engineered for reliability, offering capacities from 1,500 kg to 3,200 kg with heights up to 96 meters.',
     products: [
@@ -87,6 +89,7 @@ const categories = [
   },
   {
     title: 'Power Generators',
+    headerImage: 'generator.jpg',
     description:
       'Reliable diesel generator sets from leading engine manufacturers for continuous and standby power. Silent-type enclosures available for noise-sensitive environments. Ideal for construction sites, industrial facilities, and emergency backup.',
     products: [
@@ -127,6 +130,7 @@ const categories = [
   },
   {
     title: 'Solar Energy Systems',
+    headerImage: 'solar2.jpg',
     description:
       'Complete solar energy solutions including high-efficiency monocrystalline panels, energy storage batteries, and system accessories. Designed for both on-grid and off-grid applications, reducing energy costs and environmental impact.',
     products: [
@@ -199,6 +203,17 @@ export function Products() {
 
       {categories.map((cat, catIdx) => (
         <section class="product-category" key={catIdx}>
+          {cat.headerImage && (
+            <div class="product-category__banner fade-in">
+              <img
+                src={`${BASE}/images/${cat.headerImage}`}
+                alt={cat.title}
+                loading="lazy"
+                class="product-category__banner-img"
+              />
+              <div class="product-category__banner-overlay" />
+            </div>
+          )}
           <div class="container">
             <div class="product-category__header fade-in">
               <div class="gold-line" />

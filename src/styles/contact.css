@@ -3,6 +3,16 @@
   background: var(--navy);
 }
 
+.contact-page .page-hero {
+  background: url('/gulf-developers/images/construction.jpg') center/cover no-repeat;
+}
+
+.contact-page .page-hero::before {
+  background:
+    linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(20, 36, 69, 0.82) 100%),
+    radial-gradient(circle at 20% 50%, rgba(200, 164, 92, 0.05) 0%, transparent 50%);
+}
+
 .contact-main {
   padding: 100px 0;
 }

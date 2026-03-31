@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'preact/hooks'
 import { Hero } from '../components/Hero.jsx'
 import '../styles/about.css'
 
+const BASE = '/gulf-developers'
+
 export function About() {
   const observerRef = useRef(null)
 
@@ -37,6 +39,12 @@ export function About() {
         <div class="container">
           <div class="about-story__grid">
             <div class="about-story__image fade-in-left">
+              <img
+                src={`${BASE}/images/about.jpg`}
+                alt="Gulf Developers construction site"
+                loading="lazy"
+                class="about-story__photo"
+              />
               <div class="about-story__image-inner">
                 <div class="about-story__image-year">2010</div>
                 <div class="about-story__image-text">Established in Baghdad</div>

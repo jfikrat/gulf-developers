@@ -74,25 +74,25 @@ const products = [
     title: 'Tower Cranes',
     desc: 'Heavy-lift solutions up to 12T',
     count: '3 Models',
-    gradient: 'linear-gradient(135deg, #1a2a4a 0%, #0f1f3a 40%, rgba(200, 164, 92, 0.15) 100%)',
+    image: 'crane2.jpg',
   },
   {
     title: 'Construction Hoists',
     desc: 'Personnel & material transport',
     count: '3 Models',
-    gradient: 'linear-gradient(135deg, #142445 0%, #0a1628 40%, rgba(200, 164, 92, 0.12) 100%)',
+    image: 'hoist.jpg',
   },
   {
     title: 'Power Generators',
     desc: '350kVA to 1500kVA diesel units',
     count: '3 Models',
-    gradient: 'linear-gradient(135deg, #1a2a4a 0%, #0f1830 40%, rgba(200, 164, 92, 0.1) 100%)',
+    image: 'generator.jpg',
   },
   {
     title: 'Solar Energy',
     desc: 'Panels, inverters & storage',
     count: '3 Models',
-    gradient: 'linear-gradient(135deg, #0f2035 0%, #0a1628 40%, rgba(200, 164, 92, 0.18) 100%)',
+    image: 'solar.jpg',
   },
 ]
 
@@ -230,7 +230,7 @@ export function Home() {
           <div class="products-overview__grid">
             {products.map((p, i) => (
               <a href={`${BASE}/products`} class="product-card fade-in" style={{ transitionDelay: `${i * 0.1}s` }} key={i}>
-                <div class="product-card__bg" style={{ background: p.gradient }} />
+                <div class="product-card__bg" style={{ backgroundImage: `url('${BASE}/images/${p.image}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                 <div class="product-card__overlay" />
                 <div class="product-card__content">
                   <div class="product-card__count">{p.count}</div>
@@ -251,7 +251,7 @@ export function Home() {
       </section>
 
       {/* CTA */}
-      <section class="cta-section">
+      <section class="cta-section cta-section--bg">
         <div class="container">
           <div class="cta-section__inner fade-in">
             <h2>Ready to Build with Us?</h2>
