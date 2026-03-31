@@ -204,3 +204,48 @@
     text-align: center;
   }
 }
+
+/* ===== Footer RTL ===== */
+[dir="rtl"] .footer__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer__contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer__contact-text strong {
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+[dir="rtl"] .footer__contact-text a,
+[dir="rtl"] .footer__contact-text {
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .footer__heading {
+  text-align: right;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[dir="rtl"] .footer__links {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__brand-text {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__socials {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .footer__bottom-inner {
+  flex-direction: row-reverse;
+}
