@@ -326,6 +326,60 @@
   color: var(--text-light);
 }
 
+/* ===== Certificate Badges ===== */
+.cert-badges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.cert-badge {
+  background: var(--bg-card);
+  border: 1px solid rgba(160, 125, 79, 0.3);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.cert-badge:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(160, 125, 79, 0.08);
+  transform: translateY(-2px);
+}
+
+.cert-badge__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(160, 125, 79, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.cert-badge__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 4px;
+}
+
+.cert-badge__sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ===== Download Button ===== */
+.btn--download {
+  gap: 10px;
+}
+
 /* ===== Our Clients ===== */
 .our-clients {
   background: var(--bg-alt);
@@ -451,6 +505,10 @@
   }
 
   .company-reg__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-badges {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -111,6 +111,19 @@
   font-weight: 700;
 }
 
+/* ===== Arabic Subtitle Fade ===== */
+.service-detail-card .arabic-sub {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.service-detail-card.visible .arabic-sub,
+.fade-in.visible .arabic-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== FAQ Accordion ===== */
 .faq-section {
   background: var(--bg-alt);

@@ -16,4 +16,9 @@ const spa404Plugin = () => ({
 export default defineConfig({
   plugins: [preact(), spa404Plugin()],
   base: '/gulf-developers/',
+  build: {
+    // CSS url() references to /gulf-developers/images/... are resolved at runtime via <base>,
+    // not at build time. The Vite warnings about unresolved assets are expected and harmless.
+    assetsInlineLimit: 0,
+  },
 })

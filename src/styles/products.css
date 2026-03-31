@@ -192,6 +192,20 @@
   color: var(--white);
 }
 
+/* ===== Arabic Subtitle Fade ===== */
+.product-category .category-arabic {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.product-category.visible .category-arabic,
+.fade-in.visible + .category-arabic,
+.product-category__header.visible .category-arabic {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== Why Gulf Developers Callout ===== */
 .why-gd {
   background: var(--bg-alt);

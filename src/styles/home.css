@@ -14,7 +14,7 @@
   width: 110%;
   height: 110%;
   background: url('/gulf-developers/images/hero.jpg') center/cover no-repeat;
-  animation: kenBurns 25s ease-in-out infinite alternate;
+  animation: kenBurns 30s ease-in-out infinite alternate;
   will-change: transform;
   z-index: -1;
 }
@@ -191,6 +191,24 @@
 .hero__arabic  { animation-delay: 0.7s; }
 .hero__desc    { animation-delay: 0.9s; }
 .hero__actions { animation-delay: 1.1s; }
+
+/* ===== Hero Download Profile Link ===== */
+.hero__profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+  opacity: 0;
+  animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.3s forwards;
+}
+
+.hero__profile-link:hover {
+  color: var(--gold-light);
+}
 
 /* ===== Scroll Indicator — delayed fade in ===== */
 @keyframes fadeInUp {
@@ -459,7 +477,7 @@
   width: 110%;
   height: 110%;
   background: url('/gulf-developers/images/skyline.jpg') center/cover no-repeat;
-  animation: kenBurns 25s ease-in-out infinite alternate;
+  animation: kenBurns 30s ease-in-out infinite alternate;
   will-change: transform;
   z-index: 0;
 }
@@ -556,6 +574,16 @@
   margin-top: -8px;
   margin-bottom: 16px;
   font-weight: 300;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.fade-in.visible .arabic-sub,
+.section-header.visible .arabic-sub,
+.visible > .arabic-sub {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dark-section .arabic-sub,

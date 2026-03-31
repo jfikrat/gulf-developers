@@ -213,6 +213,61 @@ export function About() {
               <span>ISO 9001:2015</span>
             </div>
           </div>
+
+          {/* Certificate Badges */}
+          <div class="cert-badges fade-in">
+            <div class="cert-badge">
+              <div class="cert-badge__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
+              <h4 class="cert-badge__title">ISO 9001:2015</h4>
+              <span class="cert-badge__sub">Quality Management</span>
+            </div>
+            <div class="cert-badge">
+              <div class="cert-badge__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                  <polyline points="9 14 11 16 15 12" />
+                </svg>
+              </div>
+              <h4 class="cert-badge__title">Licensed Contractor</h4>
+              <span class="cert-badge__sub">Class A — Republic of Iraq</span>
+            </div>
+            <div class="cert-badge">
+              <div class="cert-badge__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-6h6v6" />
+                </svg>
+              </div>
+              <h4 class="cert-badge__title">Baghdad Chamber</h4>
+              <span class="cert-badge__sub">Registered Member</span>
+            </div>
+            <div class="cert-badge">
+              <div class="cert-badge__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h4 class="cert-badge__title">Safety Certified</h4>
+              <span class="cert-badge__sub">HSE Compliance</span>
+            </div>
+          </div>
+
+          {/* Download Company Profile */}
+          <div class="company-reg__download fade-in" style={{ marginTop: '36px', textAlign: 'center' }}>
+            <a href={`${BASE}/company-profile.html`} class="btn btn--outline btn--download" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download Company Profile
+            </a>
+          </div>
         </div>
       </section>
 

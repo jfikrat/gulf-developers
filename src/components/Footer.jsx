@@ -102,9 +102,7 @@ export function Footer() {
             <span>&copy; {year} Gulf Developers General Contracting. All rights reserved.</span>
             <span class="footer__registration">Registered Contractor — Baghdad, Iraq | Est. 2010</span>
             <span class="footer__license">Licensed General Contractor — Republic of Iraq</span>
-            <span>
-              <a href="https://gulfdevelopers.com.iq">gulfdevelopers.com.iq</a>
-            </span>
+            <span>Gulf Developers General Contracting Co.</span>
           </div>
         </div>
       </div>
