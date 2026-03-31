@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gulf Developers - Company Profile</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1410;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Header Banner */
+    .header {
+      background: linear-gradient(135deg, #1a1410 0%, #2a2420 100%);
+      padding: 48px 48px 40px;
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #a07d4f, #c4a265, #a07d4f);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .monogram {
+      width: 56px;
+      height: 56px;
+      background: #a07d4f;
+      border: 2px solid #8a6a3e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Impact', 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .company-name {
+      color: #fff;
+    }
+
+    .company-name h1 {
+      font-family: 'Impact', 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin-bottom: 2px;
+    }
+
+    .company-name .sub {
+      font-size: 0.7rem;
+      color: #c4a265;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .arabic-title {
+      color: #c4a265;
+      font-size: 1.3rem;
+      direction: rtl;
+      font-weight: 300;
+    }
+
+    .header-tagline {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    /* Content */
+    .content {
+      padding: 36px 48px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: 'Impact', 'Bebas Neue', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a07d4f;
+      border-bottom: 2px solid #e8e0d8;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    .section p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #4a4038;
+    }
+
+    /* Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 32px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.85rem;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0ebe5;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #1a1410;
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+
+    .info-value {
+      color: #4a4038;
+    }
+
+    /* Services List */
+    .services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 32px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #4a4038;
+      padding: 5px 0;
+    }
+
+    .service-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #a07d4f;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .product-box {
+      background: #faf8f5;
+      border: 1px solid #e8e0d8;
+      border-radius: 6px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .product-box h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1a1410;
+      margin-bottom: 4px;
+    }
+
+    .product-box p {
+      font-size: 0.72rem;
+      color: #8a8078;
+    }
+
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .cert-box {
+      border: 1px solid #a07d4f;
+      border-radius: 6px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    .cert-box .cert-icon {
+      font-size: 1.2rem;
+      color: #a07d4f;
+      margin-bottom: 4px;
+    }
+
+    .cert-box h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #1a1410;
+      margin-bottom: 2px;
+    }
+
+    .cert-box p {
+      font-size: 0.62rem;
+      color: #8a8078;
+    }
+
+    /* Contact Bar */
+    .contact-bar {
+      background: #faf8f5;
+      border-top: 1px solid #e8e0d8;
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .contact-item {
+      font-size: 0.78rem;
+      color: #4a4038;
+    }
+
+    .contact-item strong {
+      color: #a07d4f;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Footer */
+    .profile-footer {
+      background: #1a1410;
+      padding: 14px 48px;
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; }
+    }
+
+    @media screen {
+      body { background: #e8e0d8; padding: 20px 0; }
+      .page { box-shadow: 0 4px 24px rgba(0,0,0,0.15); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-area">
+          <div class="monogram">GD</div>
+          <div class="company-name">
+            <h1>Gulf Developers</h1>
+            <div class="sub">General Contracting Company</div>
+          </div>
+        </div>
+        <div class="arabic-title">الخليج المطورة للمقاولات العامة</div>
+      </div>
+      <div class="header-tagline">
+        Premium Construction Equipment &amp; Energy Solutions | Established 2010 | Baghdad, Iraq
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Company Overview -->
+      <div class="section">
+        <div class="section-title">Company Overview</div>
+        <p>
+          Gulf Developers General Contracting is one of Iraq's leading providers of construction
+          equipment and energy solutions. Established in 2010 in Baghdad, we have grown into a
+          trusted partner for major construction projects across Iraq, Kurdistan, and the broader
+          Middle East. With over 200 completed projects and partnerships with global manufacturers,
+          we deliver world-class equipment backed by comprehensive after-sales support.
+        </p>
+      </div>
+
+      <!-- Company Information -->
+      <div class="section">
+        <div class="section-title">Company Information</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Company Name</span>
+            <span class="info-value">Gulf Developers General Contracting Co.</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Established</span>
+            <span class="info-value">2010</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Headquarters</span>
+            <span class="info-value">Baghdad, Al-Dawoody, Iraq</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">License</span>
+            <span class="info-value">General Contracting &mdash; Class A</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Registration</span>
+            <span class="info-value">Baghdad Chamber of Commerce</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Quality Standard</span>
+            <span class="info-value">ISO 9001:2015</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Team Size</span>
+            <span class="info-value">50+ Professionals</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Projects</span>
+            <span class="info-value">200+ Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="section">
+        <div class="section-title">Services</div>
+        <div class="services-list">
+          <div class="service-item">Equipment Supply &amp; Procurement</div>
+          <div class="service-item">Professional Installation &amp; Setup</div>
+          <div class="service-item">Preventive Maintenance Programs</div>
+          <div class="service-item">Emergency Repair Services</div>
+          <div class="service-item">Solar Energy System Design</div>
+          <div class="service-item">Generator Installation &amp; Commissioning</div>
+          <div class="service-item">Technical Consultation</div>
+          <div class="service-item">Operator Training &amp; Safety Certification</div>
+        </div>
+      </div>
+
+      <!-- Product Categories -->
+      <div class="section">
+        <div class="section-title">Product Categories</div>
+        <div class="products-grid">
+          <div class="product-box">
+            <h4>Tower Cranes</h4>
+            <p>Flat-top &amp; luffing jib cranes, 4T&ndash;12T capacity</p>
+          </div>
+          <div class="product-box">
+            <h4>Construction Hoists</h4>
+            <p>Personnel &amp; material hoists, rack &amp; pinion</p>
+          </div>
+          <div class="product-box">
+            <h4>Power Generators</h4>
+            <p>Diesel generators, 350kVA&ndash;1500kVA</p>
+          </div>
+          <div class="product-box">
+            <h4>Solar Energy</h4>
+            <p>Panels, inverters, batteries &amp; mounting systems</p>
+          </div>
+          <div class="product-box">
+            <h4>Electrical Equipment</h4>
+            <p>Transformers, switchgear &amp; distribution panels</p>
+          </div>
+          <div class="product-box">
+            <h4>Safety Equipment</h4>
+            <p>PPE, fall protection &amp; site safety systems</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications & Partnerships -->
+      <div class="section">
+        <div class="section-title">Certifications &amp; Partnerships</div>
+        <div class="cert-grid">
+          <div class="cert-box">
+            <div class="cert-icon">&#10003;</div>
+            <h4>ISO 9001:2015</h4>
+            <p>Quality Management</p>
+          </div>
+          <div class="cert-box">
+            <div class="cert-icon">&#9878;</div>
+            <h4>Licensed Contractor</h4>
+            <p>Class A &mdash; Republic of Iraq</p>
+          </div>
+          <div class="cert-box">
+            <div class="cert-icon">&#9733;</div>
+            <h4>Baghdad Chamber</h4>
+            <p>Registered Member</p>
+          </div>
+          <div class="cert-box">
+            <div class="cert-icon">&#9888;</div>
+            <h4>Safety Certified</h4>
+            <p>HSE Compliance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Partners -->
+      <div class="section">
+        <div class="section-title">Authorized Dealer &amp; Partner</div>
+        <p style="font-size:0.82rem; color:#8a8078; letter-spacing:1px; text-align:center;">
+          POTAIN &nbsp;&bull;&nbsp; ZOOMLION &nbsp;&bull;&nbsp; CUMMINS &nbsp;&bull;&nbsp; LONGI SOLAR &nbsp;&bull;&nbsp; BAUDOUIN &nbsp;&bull;&nbsp; LIEBHERR
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Footer -->
+    <div class="contact-bar">
+      <div class="contact-item">
+        <strong>Address</strong>
+        Baghdad, Al-Dawoody, Iraq
+      </div>
+      <div class="contact-item">
+        <strong>Phone</strong>
+        +964 786 000 0018
+      </div>
+      <div class="contact-item">
+        <strong>Email</strong>
+        info@gulfdevelopersiq.com
+      </div>
+    </div>
+  </div>
+</body>
+</html>
