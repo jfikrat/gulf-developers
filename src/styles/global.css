@@ -449,14 +449,94 @@ p {
   margin-left: auto;
 }
 
-/* Arabic font */
+/* Arabic font & typography */
 [dir="rtl"] body {
-  font-family: 'Noto Sans Arabic', 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Noto Sans Arabic', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
-  font-family: 'Noto Sans Arabic', 'Bebas Neue', sans-serif;
+[dir="rtl"] h1 {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 700;
   letter-spacing: 0;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.3;
+}
+
+[dir="rtl"] h2 {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.3;
+}
+
+[dir="rtl"] h3, [dir="rtl"] h4 {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+[dir="rtl"] p {
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+[dir="rtl"] .btn {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+}
+
+/* Phone/numbers stay LTR in RTL context */
+[dir="rtl"] .contact-info__card p,
+[dir="rtl"] .footer__contact-item span {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Labels & small text need more weight in Arabic */
+[dir="rtl"] .stats__label,
+[dir="rtl"] .trust-bar__label,
+[dir="rtl"] .product-card__count,
+[dir="rtl"] .service-card h3,
+[dir="rtl"] .section-label {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .trust-badge {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+[dir="rtl"] .navbar a,
+[dir="rtl"] .navbar__cta {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+}
+
+[dir="rtl"] .navbar__brand-text {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 700;
+}
+
+/* Form inputs Arabic */
+[dir="rtl"] .contact-form__input::placeholder,
+[dir="rtl"] .contact-form__textarea::placeholder {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-weight: 400;
+}
+
+[dir="rtl"] label {
+  font-weight: 600;
 }
 
 /* Arrow icons flip */
