@@ -1,3 +1,4 @@
+import { Fragment } from 'preact'
 import { useEffect, useRef } from 'preact/hooks'
 import { Hero } from '../components/Hero.jsx'
 import { useLang } from '../context/LangContext.jsx'
@@ -5,7 +6,8 @@ import '../styles/contact.css'
 
 export function Contact() {
   const observerRef = useRef(null)
-  const { t } = useLang()
+  const { t, lang } = useLang()
+  const isRTL = lang === 'ar'
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -36,63 +38,48 @@ export function Contact() {
 
       <section class="contact-main">
         <div class="container">
-          <div class="contact-main__grid">
-            {/* Contact Info */}
-            <div class="contact-info fade-in-left">
-              <div class="contact-info__card">
-                <div class="contact-info__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+          <div class="contact-main__grid" style={isRTL ? { gridTemplateColumns: '1.5fr 1fr' } : {}}>
+            {/* Contact Info — in RTL rendered second via order */}
+            <div class="contact-info fade-in-left" style={isRTL ? { order: 1 } : {}}>
+              {[
+                {
+                  icon: <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />,
+                  icon2: <circle cx="12" cy="10" r="3" />,
+                  title: t('contactPage.office'),
+                  content: <p style={isRTL ? { textAlign: 'center' } : {}}>{t('contactPage.officeAddr')}<br />{t('contactPage.iraq')}</p>,
+                },
+                {
+                  icon: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />,
+                  title: t('contactPage.phone'),
+                  content: <p style={{ direction: 'ltr', textAlign: 'center' }}><a href="tel:+9647860000018">+964 786 000 0018</a></p>,
+                },
+                {
+                  icon: <Fragment><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></Fragment>,
+                  title: t('contactPage.email'),
+                  content: <p style={{ direction: 'ltr', textAlign: 'center' }}><a href="mailto:info@gulfdevelopersiq.com">info@gulfdevelopersiq.com</a></p>,
+                },
+                {
+                  icon: <Fragment><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></Fragment>,
+                  title: t('contactPage.hours'),
+                  content: <p style={isRTL ? { textAlign: 'center' } : {}}>{t('contactPage.hoursLine1')}<br />{t('contactPage.hoursLine2')}</p>,
+                },
+              ].map((item, i) => (
+                <div class="contact-info__card" key={i} style={isRTL ? { flexDirection: 'column', alignItems: 'center', textAlign: 'center' } : {}}>
+                  <div class="contact-info__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      {item.icon}{item.icon2}
+                    </svg>
+                  </div>
+                  <div class="contact-info__text" style={isRTL ? { textAlign: 'center' } : {}}>
+                    <h3>{item.title}</h3>
+                    {item.content}
+                  </div>
                 </div>
-                <div class="contact-info__text">
-                  <h3>{t('contactPage.office')}</h3>
-                  <p>{t('contactPage.officeAddr')}<br />{t('contactPage.iraq')}</p>
-                </div>
-              </div>
-
-              <div class="contact-info__card">
-                <div class="contact-info__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </div>
-                <div class="contact-info__text">
-                  <h3>{t('contactPage.phone')}</h3>
-                  <p><a href="tel:+9647860000018">+964 786 000 0018</a></p>
-                </div>
-              </div>
-
-              <div class="contact-info__card">
-                <div class="contact-info__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </div>
-                <div class="contact-info__text">
-                  <h3>{t('contactPage.email')}</h3>
-                  <p><a href="mailto:info@gulfdevelopersiq.com">info@gulfdevelopersiq.com</a></p>
-                </div>
-              </div>
-
-              <div class="contact-info__card">
-                <div class="contact-info__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a07d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                </div>
-                <div class="contact-info__text">
-                  <h3>{t('contactPage.hours')}</h3>
-                  <p>{t('contactPage.hoursLine1')}<br />{t('contactPage.hoursLine2')}</p>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Contact Form */}
-            <div class="contact-form fade-in-right">
+            <div class="contact-form fade-in-right" style={isRTL ? { order: 0, textAlign: 'right' } : {}}>
               <h2>{t('contactPage.formTitle')}</h2>
               <div class="gold-line" />
               <form action="https://formspree.io/f/xgegkpwl" method="POST">
